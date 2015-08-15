@@ -1,0 +1,390 @@
+@font-face
+{
+    font-family: 'MuseoSans';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/museosans_300-webfont.eot');
+    src: url('../fonts/museosans_300-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/museosans_300-webfont.woff') format('woff'),url('../fonts/museosans_300-webfont.ttf') format('truetype'),url('../fonts/museosans_300-webfont.svg#MuseoSans300Regular') format('svg');
+}
+@font-face
+{
+    font-family: 'MuseoSans';
+    font-style: italic;
+    font-weight: normal;
+    src: url('../fonts/museosans_100_italic-webfont.eot');
+    src: url('../fonts/museosans_100_italic-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/museosans_100_italic-webfont.woff') format('woff'),url('../fonts/museosans_100_italic-webfont.ttf') format('truetype'),url('../fonts/museosans_100_italic-webfont.svg#MuseoSans100Italic') format('svg');
+}
+@font-face
+{
+    font-family: 'MuseoSans';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/museosans_700-webfont.eot');
+    src: url('../fonts/museosans_700-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/museosans_700-webfont.woff') format('woff'),url('../fonts/museosans_700-webfont.ttf') format('truetype'),url('../fonts/museosans_700-webfont.svg#MuseoSans700Regular') format('svg');
+}
+@font-face
+{
+    font-family: 'MuseoSans_light';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/museosans_100-webfont.eot');
+    src: url('../fonts/museosans_100-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/museosans_100-webfont.woff') format('woff'),url('../fonts/museosans_100-webfont.ttf') format('truetype'),url('../fonts/museosans_100-webfont.svg#MuseoSans100') format('svg');
+}
+@font-face
+{
+    font-family: 'MuseoSans_bold';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/museosans_900-webfont.eot');
+    src: url('../fonts/museosans_900-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/museosans_900-webfont.woff') format('woff'),url('../fonts/museosans_900-webfont.ttf') format('truetype'),url('../fonts/museosans_900-webfont.svg#MuseoSans900') format('svg');
+}
+@font-face
+{
+    font-family: 'museo_300regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/museo300-regular-webfont.eot');
+    src: url('../fonts/museo300-regular-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/museo300-regular-webfont.woff') format('woff'),url('../fonts/museo300-regular-webfont.ttf') format('truetype'),url('../fonts/museo300-regular-webfont.svg#museo_300regular') format('svg');
+}
+@font-face
+{
+    font-family: 'museo_500regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/museo500-regular-webfont.eot');
+    src: url('../fonts/museo500-regular-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/museo500-regular-webfont.woff') format('woff'),url('../fonts/museo500-regular-webfont.ttf') format('truetype'),url('../fonts/museo500-regular-webfont.svg#museo_500regular') format('svg');
+}
+@font-face
+{
+    font-family: 'museo_700regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/museo700-regular-webfont.eot');
+    src: url('../fonts/museo700-regular-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/museo700-regular-webfont.woff') format('woff'),url('../fonts/museo700-regular-webfont.ttf') format('truetype'),url('../fonts/museo700-regular-webfont.svg#museo_700regular') format('svg');
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+{
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section
+{
+    display: block;
+}
+body
+{
+    line-height: 1;
+}
+article.content
+{
+    margin-top: 50px;
+}
+ol, ul
+{
+    list-style: none;
+}
+.content blockquote
+{
+    border-left: 4px solid #DDDDDD;
+    color: #777777;
+    margin: 15px 0;
+    padding: 0 15px;
+}
+table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body
+{
+    background-color: #ffffff;
+    color: #000000;
+    font-family: MuseoSans,Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode","Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",Verdana,sans-serif;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    word-spacing: 1px;
+}
+body>div
+{
+    background-color: #fff;
+    border-top: 6px solid #fff;
+    box-shadow: 0 0 10px 0 #cfcfcf;
+    moz-box-shadow: 0 0 10px 0 #cfcfcf;
+    padding: 0.5em 0.5em 0.5em;
+    webkit-box-shadow: 0 0 10px 0 #cfcfcf;
+}
+
+h1.head
+{
+    background-color: #fff;
+    color: #000;
+    display: inline-block;
+    font-size: 28px;
+}
+
+h1.pagetitle
+{
+    font-size: 22px;
+    line-height: 48px;
+}
+
+h2
+{
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 48px;
+    margin: 0px 0 24px 0;
+}
+h2 i
+{
+    color: #ccc;
+    font-size: 18px;
+}
+h3
+{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+}
+section>h3
+{
+    margin: 0 0 24px 0;
+}
+h4
+{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 12px;
+}
+p, ul, ol, dl
+{
+    line-height: 24px;
+    margin: 0 0 24px 0;
+}
+p.intro
+{
+    font-size: 24px;
+    line-height: 32px;
+}
+ul
+{
+    list-style-type: square;
+    padding-left: 6px;
+}
+ol
+{
+    list-style-type: decimal;
+    padding-left: 12px;
+}
+dt
+{
+    font-weight: 700;
+}
+pre
+{
+    background-color: #f3f3f3;
+    border-left: 6px solid #edebea;
+    font-family: monospace;
+    font-size: 14px;
+    margin: 0 0 24px;
+    overflow: auto;
+    padding: 12px;
+}
+p code
+{
+    background-color: #EEE;
+    border: 1px solid #edebea;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 1px 5px;
+}
+hr
+{
+    background-color: #edebea;
+    border: 0;
+    height: 2px;
+    margin: 10px 0px 0px 0px;
+}
+a, a:visited
+{
+    color: #1F7900;
+    text-decoration: none;
+}
+a:hover
+{
+    color: #33B307;
+    text-decoration: underline;
+}
+a.normal
+{
+    color: #000000;
+    text-decoration: none;
+}
+a.normal:visited
+{
+    color: #999999;
+    text-decoration: none;
+}
+a.normal:hover
+{
+    color: #1F7900;
+    text-decoration: underline;
+}
+a.ss-icon
+{
+    color: #ccc;
+    font-size: 20px;
+    padding: 0px 5px;
+}
+a.ss-icon:hover
+{
+    color: #156615;
+    text-decoration: none;
+}
+a.footer
+{
+    color: #000000;
+    text-decoration: none;
+}
+a.footer:visited
+{
+    color: #000000;
+    text-decoration: none;
+}
+a.footer:hover
+{
+    color: #1F7900;
+    text-decoration: underline;
+}
+em
+{
+    font-style: italic;
+}
+strong
+{
+    font-weight: 700;
+}
+img.avatar
+{
+    float: right;
+    position: relative;
+}
+section.categories
+{
+    font-size: 14px;
+    margin: 20px 0 0 0;
+    text-align: left;
+}
+span.categories
+{
+}
+.meta
+{
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+dl .meta
+{
+    margin: 0 0 24px 0;
+}
+.home
+{
+    float: right;
+    position: relative;
+}
+.buttons
+{
+    float: right;
+}
+.listing
+{
+    margin: 0px 0px 50px 0px;
+}
+.listing-item,.listing-seperator
+{
+    list-style-type: none;
+}
+.listing-item a
+{
+    padding: .2em 1em;
+}
+.listing-item time
+{
+    color: #999999;
+}
+.listing-seperator
+{
+    /*font-weight: bold;*/
+}
+.post
+{
+    margin: 50px 0px 50px 0px;
+}
+.paginator
+{
+    color: #aaa;
+    display: block;
+    font: 14px Arial,Helvetica,sans-serif;
+    line-height: 150%;
+    margin: 20px 0;
+}
+.paginator a,.paginator span
+{
+    margin: 2px;
+    padding: 0 4px;
+    text-decoration: none;
+}
+.paginator .current-page
+{
+    background: #999999;
+    color: white;
+}
+.paginator a
+{
+    color: #101010;
+    text-decoration: none;
+}
+.paginator a:visited
+{
+    color: #101010;
+    text-decoration: none;
+}
+.paginator a:hover
+{
+    background: #1F7900;
+    color: white;
+}
+.comment
+{
+    margin-top: 50px;
+}
+footer
+{
+    border-top: 1px dashed #CCC;
+    display: block;
+    margin: 50px 0px 0px 0px;
+}
+footer small
+{
+    color: #999;
+    font-size: 13px;
+}
