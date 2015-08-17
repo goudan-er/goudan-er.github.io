@@ -152,6 +152,12 @@ h1.head
     font-size: 28px;
 }
 
+h1.pagetitle
+{
+    font-size: 22px;
+    line-height: 48px;
+}
+
 h2
 {
     font-size: 22px;
