@@ -18,7 +18,7 @@ permalink: /:year/:month/:title/
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: pygments
-paginate: 12
+paginate: 24
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
