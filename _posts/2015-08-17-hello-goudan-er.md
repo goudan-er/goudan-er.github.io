@@ -39,7 +39,7 @@ Img:
 * 网上教程很多，大家都是和我一样聪明的人。遇到种种问题，Google it and Fix it.
 * 在Windows下配置简直是作死。还好，我熬过来了。建议像我一样喜欢Win的用户，在电脑配置可以的情况下，使用虚拟机在Linux下搭建博客。
 * 如果非要像我一样在Windows下用，那么一定找一个Windows下的建站教程，一步一步跟着人家，同时，一定要注意的问题是，安装各种环境时，比如ruby，devkit，一定要统一，要么都是64位的，要么都是x86的，不过最初都是安装x64环境的时候，问题很多，建议安装x86的环境。
-* 域名购买，别去godady了，建议[namecheap](https://www.namecheap.com/)，真是便宜，而且感觉也很稳定，赶着活动，买了一个xyz域名，才￥1，感谢[alphabet](http://www.alphabet.xyz)。
+* 域名购买，别去godady了，建议[namecheap](https://www.namecheap.com/)，真是便宜，而且感觉也很稳定，赶着活动，买了一个xyz域名，才￥1，感谢[alphabet](https://abc.xyz/)。
 
  <!-- SyntaxHightligher -->
 <script src="/media/syntaxhighlighter/scripts/shCore.js"></script>
