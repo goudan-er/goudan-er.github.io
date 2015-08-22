@@ -140,15 +140,17 @@ body>div
     border-top: 6px solid #fff;
     box-shadow: 0 0 10px 0 #cfcfcf;
     moz-box-shadow: 0 0 10px 0 #cfcfcf;
+    min-width: 30em;
     padding: 0.5em 0.5em 0.5em;
     webkit-box-shadow: 0 0 10px 0 #cfcfcf;
-    width: auto
+    width: 100%
 }
 
 h1.head
 {
+    float: right;
     background-color: #fff;
-    color: #000;
+    color: #ccc;
     display: inline-block;
     font-size: 1.75em;
 }
