@@ -30,7 +30,7 @@ Img:
 
 博客UI参考了[JIM](http://blog.sevenche.com/)。特此感谢JIM的分享。自认自己美工不行，又有强迫症，UI最终搞成了现在这样。
 
-## 插件：
+## 插件
 - 评论： [DISQUS](https://disqus.com/)
 - 分享： [AddThis](http://www.addthis.com/)
 - 代码高亮： [SyntaxHighlighter 3.0.83](http://alexgorbatchev.com/SyntaxHighlighter/)
