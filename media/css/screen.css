@@ -106,7 +106,7 @@ body
 }
 article.content
 {
-    margin-top: 50px;
+    margin-top: 3.125em;
 }
 ol, ul
 {
@@ -116,8 +116,8 @@ ol, ul
 {
     border-left: 4px solid #DDDDDD;
     color: #777777;
-    margin: 15px 0;
-    padding: 0 15px;
+    margin: 1em 0;
+    padding: 0 1em;
 }
 table
 {
@@ -129,7 +129,7 @@ body
     background: #ffffff url(../images/background.png) repeat top left;
     color: #000000;
     font-family: MuseoSans,Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode","Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",Verdana,sans-serif;
-    font-size: 16px;
+    font-size: 1em;
     margin-left: auto;
     margin-right: auto;
     word-spacing: 1px;
@@ -145,7 +145,7 @@ body>div
     moz-box-shadow: 0 0 10px 0 #cfcfcf;
     padding: 3em 3em 1.5em;
     webkit-box-shadow: 0 0 10px 0 #cfcfcf;
-    width: 70%;
+    width: auto;
 }
 
 h1.head
@@ -154,52 +154,54 @@ h1.head
     background-color: #fff;
     color: #ccc;
     display: inline-block;
-    font-size: 28px;
+    font-size: 1.75em;
 }
 
 h1.pagetitle
 {
-    font-size: 22px;
-    line-height: 48px;
+    font-size: 1.375em;
+    line-height: 3em;
 }
 
 h2
 {
-    font-size: 22px;
+    font-size: 1.375em;
     font-weight: bold;
-    line-height: 48px;
-    margin: 0px 0 24px 0;
+    line-height: 2.25em;
 }
 h2 i
 {
     color: #ccc;
-    font-size: 18px;
+    font-size: 1.25em;
 }
 h3
 {
-    font-size: 18px;
+    font-size: 1.25em;
     font-weight: bold;
-    line-height: 24px;
-}
-section>h3
-{
-    margin: 0 0 24px 0;
+    line-height: 1.5em;
 }
 h4
 {
-    font-size: 16px;
+    font-size: 1em;
     font-weight: bold;
-    line-height: 12px;
+    line-height: 0.75em;
 }
-p, ul, ol, dl
+#simplecode
 {
-    line-height: 24px;
-    margin: 0 0 24px 0;
+    margin: 0 0 0.75em 0;
+}
+p
+{
+    line-height: 1.5em;
+}
+ul, ol, dl
+{
+    line-height: 1.5em;
 }
 p.intro
 {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5em;
+    line-height: 2em;
 }
 ul
 {
@@ -209,36 +211,17 @@ ul
 ol
 {
     list-style-type: decimal;
-    padding-left: 12px;
 }
 dt
 {
     font-weight: 700;
-}
-pre
-{
-    background-color: #f3f3f3;
-    border-left: 6px solid #edebea;
-    font-family: monospace;
-    font-size: 14px;
-    margin: 0 0 24px;
-    overflow: auto;
-    padding: 12px;
-}
-p code
-{
-    background-color: #EEE;
-    border: 1px solid #edebea;
-    font-family: monospace;
-    font-size: 14px;
-    padding: 1px 5px;
 }
 hr
 {
     background-color: #edebea;
     border: 0;
     height: 2px;
-    margin: 15px 0px 0px 0px;
+    margin: 1em 0 0 0;
 }
 a, a:visited
 {
@@ -268,11 +251,11 @@ a.normal:hover
 .menu a
 {
     font-family: 'WebSymbolsRegular', cursive;
-    font-size: 28px;
+    font-size: 1.75em;
     background-color: #fff;
     color: #ccc;
     display: inline-block;
-    font-size: 20px;
+    font-size: 1.25em;
     padding: 0px 5px;
     -webkit-transition: all 300ms linear;
     -moz-transition: all 300ms linear;
@@ -315,8 +298,8 @@ img.avatar
 }
 section.categories
 {
-    font-size: 14px;
-    margin: 20px 0 0 0;
+    font-size: 0.875em;
+    margin: 1.25em 0 0 0;
     text-align: left;
 }
 span.categories
@@ -324,13 +307,13 @@ span.categories
 }
 .meta
 {
-    font-size: 14px;
+    font-size: 0.875em;
     margin-bottom: 10px;
     text-align: left;
 }
 dl .meta
 {
-    margin: 0 0 24px 0;
+    margin: 0 0 1.5em 0;
 }
 .home
 {
@@ -339,7 +322,7 @@ dl .meta
 }
 .listing
 {
-    margin: 0px 0px 50px 0px;
+    margin: 0 0 3.125em 0;
 }
 .listing-item,.listing-seperator
 {
@@ -359,15 +342,15 @@ dl .meta
 }
 .post
 {
-    margin: 50px 0px 50px 0px;
+    margin: 1.875em 0 3.125em 0;
 }
 .paginator
 {
     color: #aaa;
     display: block;
-    font: 14px Arial,Helvetica,sans-serif;
+    font: 0.875em Arial,Helvetica,sans-serif;
     line-height: 150%;
-    margin: 20px 0;
+    margin: 1.25em 0;
 }
 .paginator a,.paginator span
 {
@@ -397,16 +380,16 @@ dl .meta
 }
 .comment
 {
-    margin-top: 50px;
+    margin-top: 3.125em;
 }
 footer
 {
     border-top: 1px dashed #CCC;
     display: block;
-    margin: 50px 0px 0px 0px;
+    margin: 3.125em 0 0 0;
 }
 footer small
 {
     color: #999;
-    font-size: 13px;
+    font-size: 0.875em;
 }
