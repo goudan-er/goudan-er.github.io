@@ -293,10 +293,11 @@ strong
 {
     font-weight: 700;
 }
-img.avatar
+img
 {
     float: right;
     position: relative;
+    width: 100%;
 }
 section.categories
 {
