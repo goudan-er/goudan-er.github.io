@@ -192,6 +192,15 @@ h4
 {
     margin: 0 0 0.75em 0;
 }
+code
+{
+    background-color: #E5EAED;
+    border-radius: 4px;
+    color: #F55567;
+    font-size: 90%;
+    padding: 2px 4px;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
 p
 {
     line-height: 1.5em;
