@@ -40,7 +40,7 @@ LRU, Least Recently Used, 最近最少使用算法，是一种置换算法，操
 	SyntaxHighlighter.all()
 </script>
 
-<pre class="brush: cpp; highlight: [7]; auto-links: true; collapse: true" id="simplecode">
+<pre class="brush: cpp; highlight: [15,21,22]; auto-links: true; collapse: true" id="simplecode">
 
 #include &lt;stdio.h&gt;
 #include &lt;string.h&gt;
