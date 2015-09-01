@@ -11,7 +11,7 @@ tags:
 ---
 
 ##题目描述
-链接： [https://leetcode.com/problems/lru-cache/](https://leetcode.com/problems/lru-cache/)  
+> 链接： [https://leetcode.com/problems/lru-cache/](https://leetcode.com/problems/lru-cache/)    
 > 实现LRU(Least Recently Used)Cache算法  
 > 支持 ```get``` 和 ```set``` 两种操作  
 > ```get(key)``` - 返回key对应的value，value总大于0，若不存在返回-1   
