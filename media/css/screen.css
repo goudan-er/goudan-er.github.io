@@ -165,8 +165,11 @@ h1.pagetitle
 h2
 {
     font-size: 1.375em;
-    font-weight: bold;
-    line-height: 2.25em;
+    line-height: 1.25em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3em;
+    margin-top: 1em;
+    margin-bottom: 16px;
 }
 h2 i
 {
