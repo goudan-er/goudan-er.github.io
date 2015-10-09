@@ -23,7 +23,7 @@ LRU, Least Recently Used, 最近最少使用算法，是一种置换算法，操
 ##题目分析
 清楚了LRU Cache算法，也就有了一个大概的思路，我们将所有的缓存用链表组织起来，将最近使用的放到表头。由于每一次访问缓存则要把访问的<key, value>放到表头，为了维护链表则需要使用**双向链表**。  
 同时，在```set```以及```get```操作的时候需要查找，所以还需要使用一些可以高效查找以及删除的数据结构。  
-自认为代码实现的还算高效。
+自认为代码实现的还算高效。  
 - 首先使用一块线性内存空间```cache[capacity]```模拟双向链表， 类型为```Data```  
 - ```move2Head(int index)```函数是把index对应的buffer移到表头  
 - 为了高效查找以及删除：定义一个```unordered_map<int key, int index> indexTable```，快速查找key对应的index，得到value，即key->index->value。删除查找的时间复杂度都是O(1)。```unordered_map```是C++ 11新加入的数据结构，类似于stl中的hash map，不了解的同学看[这里](http://classfoo.com/ccby/article/S3XoG)  
