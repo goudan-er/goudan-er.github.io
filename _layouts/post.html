@@ -4,12 +4,12 @@ layout: default
 
 <h1 class="pagetitle">{{ page.title }}</h1>
 
-<section class="categories">
-   {% if page.categories %}
-   <span class="categories">
-   categories:
-   {% for cat in page.categories %}
-   <a href="/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>&nbsp;
+<section class="post-tags">
+   {% if page.tags %}
+   <span class="post-tags">
+   Tag:
+   {% for tag in page.tags %}
+   <a href="/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>&nbsp;
    {% endfor %}
    </span>
    {% endif %}
