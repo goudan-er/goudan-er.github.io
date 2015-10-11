@@ -3,8 +3,7 @@ layout: post
 title: "LeetCode146 - LRU Cache"
 description: ""
 category:
-- LeetCode
-- Algorithm
+- 2015
 tags:
 - LeetCode
 - Algorithm
