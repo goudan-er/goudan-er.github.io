@@ -306,13 +306,6 @@ img.avatar
     float: right;
     position: relative;
 }
-section.post-tags
-{
-    text-align: left;
-}
-span.post-tags
-{
-}
 .meta
 {
     font-size: 0.875em;
@@ -547,6 +540,21 @@ footer small
     vertical-align: text-bottom;
     color: rgba(170, 165, 165, 0.96);
     /*padding-left: 2px;*/
+}
+
+section.post-tags
+{
+    text-align: left;
+}
+section.post-tags:before
+{
+    font-family: 'WebSymbolsRegular', cursive;
+    content: ",";
+    color: rgba(31, 121, 0, 0.52);
+    margin: 0 1px 0 0;
+}
+span.post-tags
+{
 }
 
 .post-tag {

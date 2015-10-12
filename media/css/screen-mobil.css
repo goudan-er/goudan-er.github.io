@@ -558,6 +558,21 @@ footer small
     /*padding-left: 2px;*/
 }
 
+section.post-tags
+{
+    text-align: left;
+}
+section.post-tags:before
+{
+    font-family: 'WebSymbolsRegular', cursive;
+    content: ",";
+    color: rgba(31, 121, 0, 0.52);
+    margin: 0 1px 0 0;
+}
+span.post-tags
+{
+}
+
 .post-tag {
   display: inline-block;
   min-width: 10px;
@@ -585,4 +600,16 @@ a.post-tag:hover
 {
     color: #111;
     text-decoration: none;
+}
+
+.logo
+{
+  margin: 0 auto 35px;
+  text-align: center;
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  animation-name: bounce;
+  -webkit-animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-name: bounce;
 }
