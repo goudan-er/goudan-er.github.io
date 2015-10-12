@@ -7,9 +7,8 @@ layout: default
 <section class="post-tags">
    {% if page.tags %}
    <span class="post-tags">
-   Tag:
    {% for tag in page.tags %}
-   <a href="/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>&nbsp;
+   <a href="/tags/#{{ tag }}" title="{{ tag }}" class="post-tag">{{ tag }}</a>
    {% endfor %}
    </span>
    {% endif %}

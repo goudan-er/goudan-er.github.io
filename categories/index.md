@@ -36,13 +36,13 @@ title: Categories
 		{% endcapture %}
 		{% if archives_year != post_year %}
 			{% assign archives_year = post_year %}
-            	<li class="listing-seperator" id="{{ archives_year }}">{{ archives_year }}</li>
-           {% endif %}
-        <li class="listing-item">
-        	<time>{{ post.date | date: "%m-%d" }}</time>
-        	<a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}" class="normal">{{ post.title }}</a>
-        </li>
-    {% endfor %}
+      <li class="listing-seperator" id="{{ archives_year }}">{{ archives_year }}</li>
+    {% endif %}
+    <li class="listing-item">
+      <time>{{ post.date | date: "%m-%d" }}</time>
+      <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}" class="normal">{{ post.title }}</a>
+    </li>
+  {% endfor %}
 </ul>
 
 

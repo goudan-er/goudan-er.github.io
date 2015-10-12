@@ -557,3 +557,32 @@ footer small
     color: rgba(170, 165, 165, 0.96);
     /*padding-left: 2px;*/
 }
+
+.post-tag {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 14px;
+  line-height: 1;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  background-color: rgba(204, 204, 204, 0.5);
+  border-radius: 10px;
+}
+
+a.post-tag
+{
+    color: #555;
+    text-decoration: none;
+}
+a.post-tag:visited
+{
+    color: #555;
+    text-decoration: none;
+}
+a.post-tag:hover
+{
+    color: #111;
+    text-decoration: none;
+}
