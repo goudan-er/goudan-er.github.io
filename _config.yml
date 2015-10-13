@@ -5,8 +5,12 @@ title : GouDan-er
 author : Wenyuan Yan
   # name :  Wenyuan Yan
   # email : llyanwenyuan@gmail.com
-  # github : goudab-er
+  # github : goudan-er
   # feedburner : feedname
+
+name: Wenyuan Yan
+description: a Personal Blog, GouDan-er will occasionally writes about things.
+url: http://www.gaodan-er.xyz
 
 markdown: rdiscount
 permalink: /:year/:month/:title/
