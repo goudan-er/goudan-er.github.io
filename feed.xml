@@ -19,7 +19,7 @@ title : RSS Feed
                 <title>{{ post.title | xml_escape }}</title>
                 <description>{{ post.content | xml_escape }}</description>
                 <link>{{ site.production_url }}{{ post.url }}</link>
-                <guid isPermaLink="true">{{ site.production_url }}{{ post.id }}</guid>
+                <guid isPermaLink="true">{{ post.id }}</guid>
                 <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         </item>
 {% endfor %}
