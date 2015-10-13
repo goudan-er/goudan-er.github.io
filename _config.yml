@@ -9,7 +9,7 @@ author : Wenyuan Yan
   # feedburner : feedname
 
 name: GouDan-er
-description: a Personal Blog, goudan-er will occasionally writes about things.
+description: A personal blog with my own thoughts or insights. GouDan-er will occasionally writes about things.
 url: http://www.goudan-er.xyz
 
 markdown: rdiscount
