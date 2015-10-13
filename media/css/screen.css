@@ -147,6 +147,15 @@ body>div
     width: 60%;
 }
 
+h1.head
+{
+    float: right;
+    background-color: #fff;
+    color: #ccc;
+    display: inline-block;
+    font-size: 1.75em;
+}
+
 h1.pagetitle
 {
     font-size: 1.375em;
@@ -579,33 +588,12 @@ a.post-tag:hover
 
 .logo
 {
-
-    float: right;
-    width: 30%;
-    padding: 2px auto;
+  margin: 0 auto 35px;
+  text-align: center;
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  animation-name: bounce;
+  -webkit-animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-name: bounce;
 }
-
-.logo h1
-{
-    float: right;
-    background-color: #fff;
-    color: #ccc;
-    display: inline-block;
-    font-size: 1.75em;
-}
-
-/*.logo img
-{
-    float: right;
-    width: 7%;
-    height: 7%;
-    display: inline-block;
-    margin-left: .5em;
-
-    animation-duration: 0.7s;
-    animation-fill-mode: both;
-    animation-name: bounce;
-    -webkit-animation-duration: 0.7s;
-    -webkit-animation-fill-mode: both;
-    -webkit-animation-name: bounce;*/
-}*/
