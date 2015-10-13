@@ -1,14 +1,11 @@
 <section class="comment">
-
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<div class="addthis_sharing_toolbox"></div>
-
-
-<!-- Disqus Comment BEGIN -->
+   <!-- Go to www.addthis.com/dashboard to customize your tools -->
+   <div class="addthis_sharing_toolbox"></div>
+   <!-- Disqus Comment BEGIN -->
    <div id="disqus_thread"></div>
    <script type="text/javascript">
-      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-      var disqus_shortname = 'ahadisqus'; // required: replace example with your forum shortname
+      /* * * CONFIGURATION VARIABLES * * */
+      var disqus_shortname = 'goudan-er';
       
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
@@ -17,8 +14,7 @@
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
       })();
    </script>
-   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
    <!--a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a-->
-<!-- Disqus Comment END -->
-
+   <!-- Disqus Comment END -->
 </section>
