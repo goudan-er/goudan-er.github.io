@@ -8,11 +8,10 @@ title : RSS Feed
 <channel>
         <title>{{ site.name }}</title>  
         <description>{{ site.description }}</description>  
-        <link>{{ site.baseurl}}{{ site.url }}</link>  
+        <link>{{ site.url }}</link>  
         <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />  
         <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
         <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-        <ttl>60</ttl>
 
 {% for post in site.posts limit:10 %}
         <item>
