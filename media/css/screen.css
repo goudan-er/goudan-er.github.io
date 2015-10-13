@@ -585,3 +585,9 @@ a.post-tag:hover
     color: #111;
     text-decoration: none;
 }
+
+blockquote strong
+{
+    color: #333;
+    font-weight: 600;
+}
