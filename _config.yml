@@ -10,7 +10,7 @@ author : Wenyuan Yan
 
 name: GouDan-er
 description: A personal blog with my own thoughts or insights. GouDan-er will occasionally writes about things.
-url: http://www.goudan-er.xyz
+# url: http://www.goudan-er.xyz
 
 markdown: rdiscount
 permalink: /:year/:month/:title/
