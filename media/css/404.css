@@ -1,0 +1,56 @@
+
+.notfound
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.notfound:before
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    height: 700px;
+    content: "";
+    background: transparent;
+    background-size: cover;
+}
+
+.error-content
+{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: 24px;
+    color: #55595d;
+    width: 500px;
+    display: block;
+    margin: 250px auto;
+    background: rgba(255,255,255, 0.8);
+    padding: 30px 40px;
+}
+
+a, a:visited
+{
+    color: #1F7900;
+    text-decoration: none;
+}
+a:hover
+{
+    color: #33B307;
+    text-decoration: underline;
+}
