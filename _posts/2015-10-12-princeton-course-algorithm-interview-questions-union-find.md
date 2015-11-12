@@ -39,7 +39,7 @@ design a data type so that all operations (except construction) should take loga
 可以使用```set```之类的平衡二叉树数据结构，很容易实现上述操作。  
 如果是使用```Union-Find```算法的话...好吧，最近撸论文demo实现，脑子坏了，想了一会没想出，网上找了一下。看下面的图就很直观了。  
 
-![Q3-Illustration](/media/images/Q3.png)
+![Q3-Illustration](/media/images/20151020_1.png)
 
 find只需返回根节点的值。
 
