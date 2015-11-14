@@ -13,8 +13,12 @@ tags:
 ## Foreword
 算法复习 —— 并查集  
 
-可以看下Coursera PRINCETON Algorithm Part1课程或者Algorithms一书。   
-Coursera上不仅有课后作业，还有面试题目，简单分析一下面试题目。   
+> 可以看下[Coursera PRINCETON Algorithm Part1](https://www.coursera.org/course/algs4partI)课程，  
+> 或者，[Algorithms](http://www.amazon.com/Algorithms-4th-Edition-Robert-Sedgewick/dp/032157351X)一书。  
+> 网盘分享：[[Course Vedio & Slides](http://pan.baidu.com/s/1c0odddA)]  [[pdf](http://pan.baidu.com/s/1jGnkMMU)]
+
+Coursera上不仅有课后作业，还有面试题目，下面分析一下所给题目。   
+
 首先给出一份带有路径压缩的并查集代码。  
 
 <pre class="brush: cpp; highlight: [16] auto-links: true; collapse: true" id="simplecode">
