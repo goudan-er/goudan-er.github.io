@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "PRINCETON Course Algorithms Interview Questions: Union Find[*坑-缺代码-明儿补]"
+title: "PRINCETON Course Algorithms Interview Questions: Union Find"
 description: ""
 category:
 - 2015
@@ -11,6 +11,46 @@ tags:
 ---
 
 ## Foreword
+算法复习 —— 并查集  
+
+可以看下Coursera PRINCETON Algorithm Part1课程或者Algorithms一书。   
+Coursera上不仅有课后作业，还有面试题目，简单分析一下面试题目。   
+首先给出一份带有路径压缩的并查集代码。  
+
+<pre class="brush: cpp; highlight: [16] auto-links: true; collapse: true" id="simplecode">
+const int N = 111111;
+
+int id[N];
+
+void Init()
+{
+    for (int i = 0; i &lt; N; ++i) {
+        id[i] = i;
+    }
+}
+
+int Find(int p)
+{
+    if (id[p] == p) return id[p];
+    else {
+        return id[p] = Find(id[p]); // compress the path
+    }
+}
+
+bool Connected(int p, int q)
+{
+    return Find(p) == Find(q);
+}
+
+void Union(int p, int q)
+{
+    int i = Find(p);
+    int j = Find(q);
+    id[i] = j;
+}
+</pre>
+
+## Reference
 > Coursera Algorithms Part1 Union-Find Interview Question  
 > [https://class.coursera.org/algs4partI-009/quiz/attempt?quiz_id=89](https://class.coursera.org/algs4partI-009/quiz/attempt?quiz_id=89)  
 
@@ -49,4 +89,12 @@ find只需返回根节点的值。
 
 
 ### Solution
-在每一个节点增加一个数据域，```height```，记录其高度。每次做```union```操作时，更新根节点的height值。
+在每一个节点增加一个数据域，```height```，记录其高度。每次做```union```操作时，更新根节点的height值。  
+时间复杂度证明：对于N个节点，按照每次将高度较大的作为根节点，最坏情况下，每次合并的两棵树高度相同，然后新树的高度+1。所以，有树最高lg**N**，即时间复杂最坏为lg**N**。
+
+ <!-- SyntaxHightligher -->
+<script src="/media/syntaxhighlighter/scripts/shCore.js"></script>
+<script src="/media/syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script>
+	SyntaxHighlighter.all()
+</script>
