@@ -110,7 +110,7 @@ article.content
 }
 ol, ul
 {
-    list-style: none;
+    list-style: circle;
 }
 .content blockquote
 {
@@ -215,10 +215,6 @@ p.intro
     font-size: 1.5em;
     line-height: 2em;
 }
-ul
-{
-    list-style-type: square;
-}
 ol
 {
     list-style-type: decimal;
@@ -232,6 +228,12 @@ hr
     background-color: #edebea;
     border: 0;
     height: 2px;
+}
+.line
+{
+    background-color: #eee;
+    border: 0;
+    height: 1px;
 }
 a, a:visited
 {
