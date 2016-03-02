@@ -21,7 +21,7 @@ description: "人生在于折腾。Goudan-er是我的艺名。会分享保存一
 
 # This URL is the main adresse. Don't include a slash at the end.
 #
-url: "http://localhost:4000"
+url: "http://www.goudan-er.xyz"
 baseurl: ""
 
 # This is for the editing function in _/includes/improve_content.html
