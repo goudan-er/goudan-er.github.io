@@ -1,0 +1,36 @@
+- title: <span class="icon-home"/>
+  url: ""
+  side: left
+
+- title: "所有文章"
+  url: "/blog/archive/"
+  side: left
+
+- title: "Share"
+  url: "/share/archive/"
+  side: left
+  dropdown:
+    - title: "Code"
+      url: "/code/"
+    - title: "CG"
+      url: "/graphics/"
+    - title: "杂"
+      url: "/misc/"
+
+- title: "生活记录"
+  url: "/life/archive/"
+  side: left
+  dropdown:
+    - title: "旅行"
+      url: "/travel/"
+    - title: "美食"
+      url: "/delicacy/"
+    - title: "哈哈哈"
+      url: "/hahaha/"
+
+- title: "Search"
+  url: "/search/"
+  side: right
+- title: "简历"
+  url: "/cv/"
+  side: right

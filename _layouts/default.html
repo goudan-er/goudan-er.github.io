@@ -1,64 +1,16 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-   <head>
-      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-      <meta name="author" content="{{ site.author }}" />
-      <meta name="viewport" content="width=device-width">
-      <title>{{ site.title }} | {{ page.title }} </title>
-      <!-- <link href="/feed/" rel="alternate" title="{{ site.author }}" type="application/atom+xml" /> -->
-      <link rel="shortcut icon" href="/goudan-er.ico"/>
+---
+layout: compress
+---
+{% include head.html %}
+<body id="top-of-page" class="{{ page.format }}">
+	{% include navigation.html %}
 
-      <link type="text/css" rel="Stylesheet" href="/media/syntaxhighlighter/styles/shCore.css"/>
-      <link type="text/css" rel="Stylesheet" href="/media/syntaxhighlighter/styles/shThemeRDark.css"/>
+	{% include masthead.html %}
 
-      <script language="JavaScript"><!--
-         if (navigator.userAgent.match(/iPhone|iPod|Android|IEMobile/i)) {
-             document.write("<link href=\"/media/css/screen-mobil.css\" rel=\"stylesheet\">");
-         } else {
-             document.write("<link href=\"/media/css/screen.css\" rel=\"stylesheet\">");
-         }
-         // --></script>
-   </head>
-   <body>
-      <div id="container">
-         <div id="main" role="main">
-            <header>
-               <h1 class="head">GouDan-er</h1>
-               <!-- <aside class="logo"><img src="../media/images/logo.png"></aside> -->
-               <div class="menu">
-                  <a href="/" title="POSTS">&#178;</a>
-                  <a href="/categories"  title="CATEGORY" >&#90;</a>
-                  <a href="/tags" title="TAG" >&#44;</a>
-                  <!-- <a href="#"  title="PROJECTS" >&#72;</a> -->
-                  <a href="/about" title="ABOUT ME" >&#85;</a>
-                  <a href="/rss.xml" title="FEED" >&#66;</a>
-               </div>
-            </header>
-            <hr>
-            <article class="content">
-               {{ content }}
-            </article>
-         </div>
-         <footer>
-               <small>
-                  Powered by <a href="https://github.com/mojombo/jekyll" class="footer">Jekyll</a> | Free hosted at <a href="#" class="footer">Github</a> | Copyright 2015 - {{site.time | date:"%Y"}}
-               </small>
-         </footer>
-      </div>
+	{{ content }}
 
-      <!-- SyntaxHightligher -->
-      <!-- <script src="/media/syntaxhighlighter/scripts/shCore.js"></script> -->
-      <!-- <script src="/media/syntaxhighlighter/scripts/shBrushCpp.js"></script> -->
-      <!-- <script src="/media/syntaxhighlighter/scripts/shBrushCSharp.js"></script> -->
-      <!-- <script src="/media/syntaxhighlighter/scripts/shBrushXml.js"></script> -->
-      <!-- <script src="/media/syntaxhighlighter/scripts/shBrushCss.js"></script> -->
-      <!-- <script src="/media/syntaxhighlighter/scripts/shBrushRuby.js"></script> -->
-      <!-- <script src="/media/syntaxhighlighter/scripts/shBrushPython.js"></script> -->
-      <!-- <script> SyntaxHighlighter.all() </script> -->
-      
-      <!-- jquery -->
-      <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
-      <!-- DISQUS -->
-      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55b9e02b38d62ec7" async="async"></script>
-   </body>
+	{% include footer.html %}
+	
+	{% include footer_scripts.html %}
+</body>
 </html>

@@ -1,0 +1,9 @@
+- menu_name: "链接"
+
+- name: "About me"
+  url: "https://about.me/yanwenyuan"
+  title: "About me"
+
+- name: "Google"
+  url: "https://www.google.com"
+  title: "Goodle Search"

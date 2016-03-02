@@ -1,2 +1,3 @@
-# goudan-er.github.io
-goudan-er's blog
+# Goudan-er
+
+http://goudan-er.xyz/
