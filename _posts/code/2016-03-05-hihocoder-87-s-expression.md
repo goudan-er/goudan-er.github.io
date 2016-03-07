@@ -21,7 +21,7 @@ image:
 - 变量的value值有两种情况，数字或者bool值，所以每次获得```string```类型的value值时要判断一下 
 - 由于C++只能返回一个类型而且一个值，所以，```getValue```返回一个flag，表示返回的类型是数字或者bool值或者Error  
 
-##Code##
+## Code##
 
 <pre class="brush: cpp; highlight: [] auto-links: true; collapse: true" id = "simplecode">
 #include &lt;iostream&gt;
