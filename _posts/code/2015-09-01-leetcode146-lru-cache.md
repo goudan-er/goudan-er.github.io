@@ -10,17 +10,17 @@ tags:
     - Algorithm
 ---
 
-##题目描述
+## 题目描述
 > 链接： [https://leetcode.com/problems/lru-cache/](https://leetcode.com/problems/lru-cache/)    
 > 实现LRU(Least Recently Used)Cache算法  
 > 支持 ```get``` 和 ```set``` 两种操作  
 > ```get(key)``` - 返回key对应的value，value总大于0，若不存在返回-1   
 > ```set(key, value)``` - 将对应的key设置成value，不存在则插入<key, value>。当Cache满时，删除最近最少使用的<key, value>  
 
-##LRU算法
+## LRU算法
 LRU, Least Recently Used, 最近最少使用算法，是一种置换算法，操作系统课程中都会讲过页面置换算法。比如FIFO, LFU, LRU都是常见的置换算法。不了解的同学看[这里](http://www.cnblogs.com/dolphin0520/p/3749259.html)。  
 
-##题目分析
+## 题目分析
 清楚了LRU Cache算法，也就有了一个大概的思路，我们将所有的缓存用链表组织起来，将最近使用的放到表头。由于每一次访问缓存则要把访问的<key, value>放到表头，为了维护链表则需要使用**双向链表**。  
 同时，在```set```以及```get```操作的时候需要查找，所以还需要使用一些可以高效查找以及删除的数据结构。  
 自认为代码实现的还算高效。  
@@ -31,7 +31,7 @@ LRU, Least Recently Used, 最近最少使用算法，是一种置换算法，操
 - 小trick。 为了代码简洁，我把双向链表的表头pre指向自己，表尾的next也指向自己，这样在```move2Head```的时候，不需要特判。   
 - 时间复杂度。 ```set``` 和 ```get``` 的操作都近似为O(1)。  
 
-##代码
+## 代码
 
 <pre class="brush: cpp; highlight: [15,19,21,22]; auto-links: true; collapse: true" id="simplecode">
 
