@@ -12,8 +12,9 @@ tags:
 
 买股票，动态规划。
 
-## LeetCode Best Time to Buy and Sell Stock I
-### 题目描述
+## LeetCode Best Time to Buy and Sell Stock I  
+
+### 题目描述  
 > 链接：[https://leetcode.com/problems/best-time-to-buy-and-sell-stock/](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)  
 > 给出股票每一天的价格，问只允许交易一次可以获得的最大利润。  
 > 输入每一天的股价```vector<int> prices```，返回最大利润。
