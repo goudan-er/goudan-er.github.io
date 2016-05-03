@@ -16,7 +16,7 @@ slogan: "Talk is cheap"
 
 
 # The description is used on homepage and in the footer to quickly describe your website. Use a maximum of 150 characters for SEO-purposes.
-description: "人生在于折腾。Goudan-er是我的艺名。会分享保存一些读书笔记、Code、算法、计算机图形学的东西。后面也会记录一些生活中的乐趣。"
+description: "人生在于折腾。会分享保存一些读书笔记、Code、算法、计算机图形学的东西。后面也会记录一些生活中的乐趣。"
 
 
 # This URL is the main adresse. Don't include a slash at the end.
@@ -121,9 +121,9 @@ defaults:
 #   ___/ / /___/ /_/ / 
 #  /____/_____/\____/    Verify Website to Webmaster Tools
 
-google_author:             "https://plus.google.com/u/0/118311555303973066167"
-google_site_verification:  "Vk0IOJ2jwG_qEoG7fuEXYqv0m2rLa8P778Fi_GrsgEQ"
-bing_webmastertools_id:    "0FB4C028ABCF07C908C54386ABD2D97F"
+# google_author:             "https://plus.google.com/u/0/118311555303973066167"
+# google_site_verification:  "Vk0IOJ2jwG_qEoG7fuEXYqv0m2rLa8P778Fi_GrsgEQ"
+# bing_webmastertools_id:    "0FB4C028ABCF07C908C54386ABD2D97F"
 # alexa_verify_id:         ""
 
 
@@ -207,7 +207,7 @@ sass:
 #
 # used in _includes/footer_scripts.html
 
-google_analytics_tracking_id: UA-63813353-1
+# google_analytics_tracking_id: UA-63813353-1
 
 owner:
   name: goudan-er
@@ -219,7 +219,7 @@ owner:
   zhihu: #userid
   weibo: #userid
   google:
-    google_analytics_tracking_id: UA-63813353-1
+    # google_analytics_tracking_id: UA-63813353-1
     verify:
     ad-client:
     ad-slot:
