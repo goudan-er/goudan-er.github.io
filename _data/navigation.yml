@@ -20,11 +20,15 @@
 - title: "生活记录"
   url: "/life/archive/"
   side: left
-  dropdown:
-    - title: "旅行"
-      url: "/travel/"
-    - title: "美食"
-      url: "/delicacy/"
+  # dropdown:
+  #   - title: "旅行"
+  #     url: "/travel/"
+  #   - title: "美食"
+  #     url: "/delicacy/"
+
+# - title: "每日一题"
+#   url: "/no-pain-no-gain/"
+#   side: left
 
 - title: "工作周报"
   url: "/report/"

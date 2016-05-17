@@ -164,7 +164,7 @@ td {
 /* Code
 ------------------------------------------------------------------- */
 
-code
+/*code
 {
     background-color: #E5EAED;
     border-radius: 4px;
@@ -172,6 +172,23 @@ code
     font-size: 90%;
     padding: 2px 4px;
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}*/
+
+pre {
+    overflow: auto;
+    margin-bottom: rem-calc(20);
+    padding: 5px;
+    background-color: $code-background-color;
+    border-radius: $global-radius;
+}
+pre code {
+    padding: rem-calc(2) rem-calc(5) rem-calc(1) rem-calc(0);
+    border: 0;
+}
+
+code {
+    font-size: rem-calc(14);
+    line-height: 1.5;
 }
 
 #simplecode
@@ -225,29 +242,30 @@ article dl dd   { line-height: 1.6; margin-bottom: rem-calc(12); margin-left: re
 ------------------------------------------------------------------- */
 
 blockquote {
+    font-style: italic;
     position: relative;
     border: none;
     margin: 0 30px 30px 30px;
-    color: #4b4b4d
+    color: #777777;
 }
  
     blockquote p {color: $grey-10; }
  
     blockquote:before {
         display:block;content:"\00BB";
-        font-size:80px;
+        font-size:66px;
         position:absolute;
-        left:-25px;
-        top:-50px;
+        left:-35px;
+        top:-48px;
         color:#4b4b4d
     }
     blockquote:after {
         display:block;
         content:"\00AB";
-        font-size:80px;
+        font-size:66px;
         position:absolute;
         right:-10px;
-        bottom:-50px;
+        bottom:-48px;
         color:#4b4b4d;
     }
     blockquote cite:before {
