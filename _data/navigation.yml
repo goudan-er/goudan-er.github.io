@@ -6,20 +6,22 @@
   url: "/blog/archive/"
   side: left
 
-- title: "Share"
+- title: "Code"
   url: "/share/archive/"
   side: left
   dropdown:
-    - title: "Code"
-      url: "/code/"
-    - title: "Graphics"
-      url: "/graphics/"
+    - title: "C++"
+      url: "/share/cpp/"
     - title: "杂"
-      url: "/misc/"
+      url: "/share/misc/"
 
-- title: "生活记录"
-  url: "/life/archive/"
+- title: "Graphics"
+  url: "/graphics/archive/"
   side: left
+
+# - title: "生活记录"
+#   url: "/life/archive/"
+#   side: left
   # dropdown:
   #   - title: "旅行"
   #     url: "/travel/"
