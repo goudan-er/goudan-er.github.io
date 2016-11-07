@@ -101,7 +101,8 @@ defaults:
       comments: true
       author: "your_author_name"
 
-
+gems:
+  - jekyll-sitemap
 
 #       _   __            _             __  _           
 #      / | / /___ __   __(_)___ _____ _/ /_(_)___  ____ 
@@ -207,7 +208,7 @@ sass:
 #
 # used in _includes/footer_scripts.html
 
-# google_analytics_tracking_id: UA-63813353-1
+google_analytics_tracking_id: UA-86957751-1
 
 owner:
   name: goudan-er
@@ -219,10 +220,10 @@ owner:
   zhihu: #userid
   weibo: #userid
   google:
-    # google_analytics_tracking_id: UA-63813353-1
-    verify:
-    ad-client:
-    ad-slot:
+    google_analytics_tracking_id: UA-86957751-1
+    # verify:
+    # ad-client:
+    # ad-slot:
   bing-verify:
 
 
