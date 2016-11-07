@@ -210,6 +210,8 @@ sass:
 
 google_analytics_tracking_id: UA-86957751-1
 
+google_site_verification: google-site-verification=kR4AEq0Nd3LZNiAvHRIGuQ0POoXkoohDCbML3uSjUv8
+
 owner:
   name: goudan-er
   disqus-shortname: goudan-er
@@ -221,7 +223,7 @@ owner:
   weibo: #userid
   google:
     google_analytics_tracking_id: UA-86957751-1
-    verify: google-site-verification=kR4AEq0Nd3LZNiAvHRIGuQ0POoXkoohDCbML3uSjUv8
+    # verify: 
     # ad-client:
     # ad-slot:
   bing-verify:
