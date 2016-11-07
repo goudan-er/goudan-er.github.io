@@ -10,11 +10,10 @@
 
 # THANKS
 
-Name: Moritz »mo.« Sauer
+Name: goudan-er
 Role: Webdesigner of Theme
-Site: http://mo.phlow.de/
+Site: http://goudan-er.xyz/
 Theme: http://phlow.github.io/feeling-responsive/
-Twitter: http://twitter.com/phlow
 
 # TECHNOLOGY COLOPHON
 
