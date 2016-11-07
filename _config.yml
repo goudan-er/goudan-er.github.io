@@ -221,7 +221,7 @@ owner:
   weibo: #userid
   google:
     google_analytics_tracking_id: UA-86957751-1
-    # verify:
+    verify: google-site-verification=kR4AEq0Nd3LZNiAvHRIGuQ0POoXkoohDCbML3uSjUv8
     # ad-client:
     # ad-slot:
   bing-verify:
