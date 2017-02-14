@@ -4,7 +4,7 @@ title: "C++多态 - 对象转型"
 teaser: "建议读一读深度探索C++模型第1,3,4章节。应该早早把这个东西弄明白。"
 categories:
     - share
-    - code
+    - cpp
 tags:
     - C++
 ---

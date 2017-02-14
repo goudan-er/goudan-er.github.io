@@ -4,7 +4,7 @@ title: "C++右值引用"
 teaser: "高效转移资源..."
 categories:
     - share
-    - code
+    - cpp
 tags:
     - C++
 ---

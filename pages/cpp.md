@@ -1,7 +1,7 @@
 ---
 layout: page
 show_meta: false
-title: "Code"
+title: "C++"
 permalink: "/share/cpp/"
 ---
-{% include list-posts.html category='code' %}
+{% include list-posts.html category='cpp' %}

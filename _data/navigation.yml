@@ -12,6 +12,8 @@
   dropdown:
     - title: "C++"
       url: "/share/cpp/"
+    - title: "JobHunting"
+      url: "/share/jobhunting/"
     - title: "杂"
       url: "/share/misc/"
 

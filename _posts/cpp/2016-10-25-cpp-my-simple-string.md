@@ -4,7 +4,7 @@ title: "C++面试中string类的一种正确写法"
 teaser: "在coolshell上陈硕大牛的一篇文章加了一点东西..."
 categories:
     - share
-    - code
+    - cpp
 tags:
     - C++
 ---

@@ -4,7 +4,7 @@ title: "C++智能指针"
 teaser: "智能指针作用，便于内存管理，确保程序不存在内存和资源泄露，并且是异常安全的。"
 categories:
     - share
-    - code
+    - cpp
 tags:
     - C++
 ---

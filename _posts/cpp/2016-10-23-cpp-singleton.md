@@ -4,7 +4,7 @@ title: "C++单例模式"
 teaser: "几种单例模式要会写..."
 categories:
     - share
-    - code
+    - cpp
 tags:
     - C++
 ---

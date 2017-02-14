@@ -4,7 +4,7 @@ title: "PRINCETON Course Algorithms Interview Questions: Union Find"
 teaser: "普林斯顿算法课并查集，作业之外的面试题目觉得不错。"
 categories:
     - share
-    - code
+    - jobhunting
 tags:
     - Algorithm
     - Interview Questions

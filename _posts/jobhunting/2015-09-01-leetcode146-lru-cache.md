@@ -1,10 +1,10 @@
 ---
 layout: page
 title: "LeetCode146 - LRU Cache"
-teaser: "LeetCode 146，Difficulty：Hard。链表、栈、队列这些基本数据结构要灵活使用。  "
+teaser: "链表、栈、队列这些基本数据结构要灵活使用..."
 categories:
     - share
-    - code
+    - jobhunting
 tags:
     - LeetCode
     - Algorithm
