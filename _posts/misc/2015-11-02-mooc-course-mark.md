@@ -2,6 +2,7 @@
 layout: page
 title: "MOOC课程收藏"
 teaser: "MOOC课程收藏，基本都来自与三大MOOC网站。我会不定期更新修改。"
+no_code: true
 categories:
     - share
     - 杂文

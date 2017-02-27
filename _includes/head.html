@@ -25,7 +25,7 @@
     })();
   </script>
   <noscript>
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7cVolkhov' rel='stylesheet' type='text/css'>
+    <link href='{{ site.url }}/assets/googleapis/fonts.css' rel='stylesheet' type='text/css'>
   </noscript>
 {% endcomment %}
   <script type="text/x-mathjax-config">
@@ -35,7 +35,7 @@
     });
   </script>
   <script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    src="{{ site.url/assets/js/MathJax.js }}">
   </script>
   {% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification}}" />{% endif %}
 	{% if site.bing_webmastertools_id %}<meta name="msvalidate.01" content="{{ site.bing_webmastertools_id }}" />{% endif %}
@@ -66,14 +66,24 @@
 	<style type="text/css">{{ page.style }}</style>
 	{% endunless %}
 
-  <link type="text/css" rel="Stylesheet" href="{{ site.url }}/assets/syntaxhighlighter/styles/shCore.css"/>
-  <link type="text/css" rel="Stylesheet" href="{{ site.url }}/assets/syntaxhighlighter/styles/shThemeEclipse.css"/>
+  <!-- SyntaxHightligher -->
+  {% if page.no_code == NULL or page.no_code == false %}
+    <link type="text/css" rel="Stylesheet" href="{{ site.url }}/assets/syntaxhighlighter/styles/shCore.css"/>
+    <link type="text/css" rel="Stylesheet" href="{{ site.url }}/assets/syntaxhighlighter/styles/shThemeEclipse.css"/>
+    <script src="{{ site.url }}/assets/syntaxhighlighter/scripts/shCore.js"></script>
+    <script src="{{ site.url }}/assets/syntaxhighlighter/scripts/shBrushCpp.js"></script>
+    <script src="{{ site.url }}/assets/syntaxhighlighter/scripts/shBrushPython.js"></script>
+    <script src="{{ site.url }}/assets/syntaxhighlighter/scripts/shBrushScala.js"></script>
+    <script src="{{ site.url }}/assets/syntaxhighlighter/scripts/shBrushSql.js"></script>
+    <script>
+      SyntaxHighlighter.all()
+    </script>
+  {% endif %}
 
-   <!-- SyntaxHightligher -->
-  <script src="{{ site.url }}/assets/syntaxhighlighter/scripts/shCore.js"></script>
-  <script src="{{ site.url }}/assets/syntaxhighlighter/scripts/shBrushCpp.js"></script>
-  <script>
-    SyntaxHighlighter.all()
-  </script>
+  {% if page.mediaplayer == true %}
+    <script src="{{ site.url }}/assets/js/jquery.min.js"></script>
+    <script src="{{ site.url }}/assets/mediaelement_js/mediaelement-and-player.min.js"></script>
+    <link rel="stylesheet" href="{{ site.url }}/assets/mediaelement_js/mediaelementplayer.min.css">
+  {% endif %}
 
 </head>
