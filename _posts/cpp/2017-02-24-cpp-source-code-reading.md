@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "C++ Code Reading Project"
+title: "C++ Code Reading"
 teaser: "No Pain, No Gain"
 no_code: true
 categories: 
