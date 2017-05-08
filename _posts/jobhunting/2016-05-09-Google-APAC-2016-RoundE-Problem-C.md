@@ -42,75 +42,75 @@ image:
 初始化，则根据X的每一位0或者1，对dp[0][j][0]和dp[0][j][1]赋值1或者0。
 
 # 代码
-<pre class="brush: cpp; highlight: [24, 35] auto-links: true; collapse: true" id = "simplecode">
-#include &lt;bits/stdc++.h&gt;
+<pre class="brush: cpp; highlight: [23, 35] auto-links: true; collapse: true" id = "simplecode">
+#include <bits/stdc++.h>
 using namespace std;
 
 #define clr(x,c) memset(x, c, sizeof(x))
 #define pb push_back
 #define mp make_pair
-#define pii pair&lt;int, int&gt;
-#define psi pair&lt;string, int&gt;
+#define pii pair<int, int>
+#define psi pair<string, int>
 #define inf 0x3f3f3f3f
 typedef long long lld;
 
 const int N = 111111;
-const int M = 31; // x &amp; k &gt;= 0, bit(31) = 0
+const int M = 31; // x & k >= 0, bit(31) = 0
 
 double dp[N][M][2];
 
 double solve()
 {
-    double ret = 0.0;
-    int n, x, k, a, b, c;
-    cin &gt;&gt; n &gt;&gt; x &gt;&gt; k &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+   double ret = 0.0;
+   int n, x, k, a, b, c;
+   cin >> n >> x >> k >> a >> b >> c;
 
-    // init
-    clr(dp, 0);
-    for (int j = 0; j &lt; M; ++j) {
-        if ( x &amp; (1 &lt;&lt; j) ) {
-            dp[0][j][0] = 0.0;
-            dp[0][j][1] = 1.0;
-        } else {
-            dp[0][j][0] = 1.0;
-            dp[0][j][1] = 0.0;
-        }
-    }
+   // init
+   clr(dp, 0);
+   for (int j = 0; j < M; ++j) {
+       if ( x & (1 << j) ) {
+           dp[0][j][0] = 0.0;
+           dp[0][j][1] = 1.0;
+       } else {
+           dp[0][j][0] = 1.0;
+           dp[0][j][1] = 0.0;
+       }
+   }
 
-    // dp
-    for (int j = 0; j &lt; M; ++j) {
-        for (int i = 1; i &lt;= n; ++i) {
-            if ( k &amp; (1 &lt;&lt; j) ) {
-                dp[i][j][0] += dp[i-1][j][0] * a / 100;
-                dp[i][j][0] += dp[i-1][j][1] * c / 100;
-                dp[i][j][1] += dp[i-1][j][1] * a / 100;
-                dp[i][j][1] += (dp[i-1][j][0] + dp[i-1][j][1]) * b / 100;
-                dp[i][j][1] += dp[i-1][j][0] * c / 100;
-            } else {
-                dp[i][j][0] += (dp[i-1][j][0] + dp[i-1][j][1]) * a / 100;
-                dp[i][j][0] += dp[i-1][j][0] * b / 100;
-                dp[i][j][0] += dp[i-1][j][0] * c / 100;
-                dp[i][j][1] += dp[i-1][j][1] * b / 100;
-                dp[i][j][1] += dp[i-1][j][1] * c / 100;
-            }
-        }
-        ret += dp[n][j][1] * (1 &lt;&lt; j);
-    }
+   // dp
+   for (int j = 0; j < M; ++j) {
+       for (int i = 1; i <= n; ++i) {
+           if ( k & (1 << j) ) {
+               dp[i][j][0] += dp[i-1][j][0] * a / 100;
+               dp[i][j][0] += dp[i-1][j][1] * c / 100;
+               dp[i][j][1] += dp[i-1][j][1] * a / 100;
+               dp[i][j][1] += (dp[i-1][j][0] + dp[i-1][j][1]) * b / 100;
+               dp[i][j][1] += dp[i-1][j][0] * c / 100;
+           } else {
+               dp[i][j][0] += (dp[i-1][j][0] + dp[i-1][j][1]) * a / 100;
+               dp[i][j][0] += dp[i-1][j][0] * b / 100;
+               dp[i][j][0] += dp[i-1][j][0] * c / 100;
+               dp[i][j][1] += dp[i-1][j][1] * b / 100;
+               dp[i][j][1] += dp[i-1][j][1] * c / 100;
+           }
+       }
+       ret += dp[n][j][1] * (1 << j);
+   }
 
-    return ret;
+   return ret;
 }
 
 int main ()
 {
-    freopen(&quot;F:/#test-data/in.txt&quot;, &quot;r&quot;, stdin);
-    freopen(&quot;F:/#test-data/out.txt&quot;, &quot;w&quot;, stdout);
-    ios::sync_with_stdio(false); cin.tie(0);
-    cout &lt;&lt; fixed &lt;&lt; showpoint;
-    int t; cin &gt;&gt; t;
-    for (int cas = 1; cas &lt;= t; ++cas) {
-        cout &lt;&lt; &quot;Case #&quot; &lt;&lt; cas &lt;&lt; &quot;: &quot;;
-        cout &lt;&lt; setprecision(9) &lt;&lt; solve() &lt;&lt; endl;
-    }
-    return 0;
+   freopen("F:/#test-data/in.txt", "r", stdin);
+   freopen("F:/#test-data/out.txt", "w", stdout);
+   ios::sync_with_stdio(false); cin.tie(0);
+   cout << fixed << showpoint;
+   int t; cin >> t;
+   for (int cas = 1; cas <= t; ++cas) {
+       cout << "Case #" << cas << ": ";
+       cout << setprecision(9) << solve() << endl;
+   }
+   return 0;
 }
 </pre>
