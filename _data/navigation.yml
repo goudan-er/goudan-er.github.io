@@ -12,6 +12,8 @@
   dropdown:
     - title: "C++"
       url: "/share/cpp/"
+    - title: "Go"
+      url: "/share/go/"
     - title: "JobHunting"
       url: "/share/jobhunting/"
     - title: "杂"
@@ -21,18 +23,9 @@
   url: "/graphics/archive/"
   side: left
 
-# - title: "生活记录"
-#   url: "/life/archive/"
-#   side: left
-  # dropdown:
-  #   - title: "旅行"
-  #     url: "/travel/"
-  #   - title: "美食"
-  #     url: "/delicacy/"
-
-# - title: "每日一题"
-#   url: "/no-pain-no-gain/"
-#   side: left
+- title: "Palette"
+  url: "/palette/"
+  side: right
 
 - title: "工作周报"
   url: "/report/"
