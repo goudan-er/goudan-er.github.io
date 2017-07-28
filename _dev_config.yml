@@ -226,3 +226,5 @@ owner:
   bing-verify:
 
 
+# gems
+gems: [jekyll-paginate]
