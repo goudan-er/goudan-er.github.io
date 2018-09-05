@@ -4,7 +4,7 @@ title: "2015百度笔试编程-树的直径"
 teaser: "百度题难度适中，自己努力加把劲儿，去微软..."
 categories:
     - share
-    - jobhunting
+    - algorithm
 tags:
     - Algorithm
 ---

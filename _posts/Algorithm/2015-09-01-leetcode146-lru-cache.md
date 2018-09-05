@@ -4,7 +4,7 @@ title: "LeetCode146 - LRU Cache"
 teaser: "链表、栈、队列这些基本数据结构要灵活使用..."
 categories:
     - share
-    - jobhunting
+    - algorithm
 tags:
     - LeetCode
     - Algorithm

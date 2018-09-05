@@ -17,4 +17,21 @@
 			    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 			{% endif %} -->
 
+{% if page.comments %}
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    owner: 'goudan-er',
+    repo: 'goudan-er.github.io',
+    oauth: {
+        client_id: '02b2418d2024908f3bd1',
+        client_secret: '37b1bd94edb7223fe2b4b409f32cd044a741a9ba',
+    },
+});
+gitment.render('gitmentContainer');
+</script>
+{% endif %}
+
 

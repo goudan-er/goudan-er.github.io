@@ -4,7 +4,7 @@ title: "LeetCode Best Time to Buy and Sell Stock I-II-III-IV"
 description: ""
 categories:
     - share
-    - jobhunting
+    - algorithm
 tags:
     - LeetCode
     - Algorithm

@@ -6,30 +6,34 @@
   url: "/blog/archive/"
   side: left
 
-- title: "Code"
+- title: "Avengers"
   url: "/share/archive/"
   side: left
   dropdown:
+    - title: "后端技术/系统/分布式"
+      url: "/share/system/"
     - title: "C++"
       url: "/share/cpp/"
     - title: "Go"
       url: "/share/go/"
-    - title: "JobHunting"
-      url: "/share/jobhunting/"
     - title: "杂"
       url: "/share/misc/"
+
+- title: "Algorithm"
+  url: "/algorithm/archive/"
+  side: left
 
 - title: "Graphics"
   url: "/graphics/archive/"
   side: left
 
-- title: "Palette"
-  url: "/palette/"
-  side: right
-
 - title: "工作周报"
   url: "/report/"
   side: left
+
+- title: "Palette"
+  url: "/palette/"
+  side: right
 
 - title: "Search"
   url: "/search/"

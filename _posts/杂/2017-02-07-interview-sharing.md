@@ -4,7 +4,7 @@ title: "2016找工作回顾"
 teaser: "也可以算面经吧，希望可以对看到的人有一点点帮助..."
 categories:
     - share
-    - jobhunting
+    - 杂
 tags:
     - Others
 ---

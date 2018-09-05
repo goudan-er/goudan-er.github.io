@@ -5,7 +5,7 @@ subheadline:
 teaser: "今天参加宣讲会模拟面试的题目，来源Google APAC 2016 University Graduates Test Round E Problem C。Google开始校招了，而我还是这么弱鸡..."
 categories: 
     - share
-    - jobhunting
+    - algorithm
 tags: 
     - Algorithm
 header: no

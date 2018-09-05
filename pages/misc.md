@@ -1,7 +1,7 @@
 ---
 layout: page
 show_meta: false
-title: "杂文"
+title: "杂"
 permalink: "/share/misc/"
 ---
-{% include list-posts.html category='杂文' %}
+{% include list-posts.html category='杂' %}

@@ -5,7 +5,7 @@ subheadline:
 teaser: "打hihoCoder，从大模拟开始..."
 categories: 
     - share
-    - jobhunting
+    - algorithm
 tags: 
     - Algorithm
 image: 

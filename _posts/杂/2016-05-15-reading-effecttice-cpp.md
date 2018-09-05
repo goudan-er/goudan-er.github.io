@@ -4,7 +4,7 @@ title: "Effective C++ 读书笔记"
 teaser: ""
 categories: 
     - share
-    - 杂文
+    - 杂
 tags:
     - C++
     - Reading
