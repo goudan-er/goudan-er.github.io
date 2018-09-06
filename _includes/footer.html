@@ -9,11 +9,11 @@
       <div id="footer">
         <div class="row">
           <div class="medium-6 large-5 columns">
-            <h5 class="shadow-black">{{ site.data.language.info_website }}</h5>
+            <h5 class="shadow-black">{{site.data.language.info_website}}</h5>
 
             <p class="shadow-black">
-              {{ site.description }}
-              <a href="{{ site.url }}/info/">{{ site.data.language.more }}</a>
+              {{site.description}}
+              <a href="{{site.url}}/info/">{{site.data.language.more}}</a>
             </p>
           </div><!-- /.large-6.columns -->
 
@@ -21,7 +21,7 @@
           <div class="small-6 medium-3 large-3 large-offset-1 columns">
             {% for service_item in site.data.services %}
               {% if forloop.first == true %}
-                <h5 class="shadow-black">{{ service_item.menu_name }}</h5>
+                <h5 class="shadow-black">{{service_item.menu_name}}</h5>
               {% endif %}
             {% endfor %}
               
@@ -32,8 +32,8 @@
                   {% else %}
                   {% assign domain = site.url %}
                 {% endif %}
-                  <li {% if service_item.class %}class="{{ service_item.class }}" {% endif %}>
-                    <a href="{{ domain }}{{ service_item.url }}" {% if service_item.url contains 'http' %}target="_blank" {% endif %} title="{{ service_item.title }}">{{ service_item.name }}</a>
+                  <li {% if service_item.class %}class="{{service_item.class}}" {% endif %}>
+                    <a href="{{domain}}{{service_item.url}}" {% if service_item.url contains 'http' %}target="_blank" {% endif %} title="{{service_item.title}}">{{service_item.name}}</a>
                   </li>
               {% endfor %}
               </ul>
@@ -43,7 +43,7 @@
           <div class="small-6 medium-3 large-3 columns">
             {% for network_item in site.data.network %}
               {% if forloop.first == true %}
-                <h5 class="shadow-black">{{ network_item.menu_name }}</h5>
+                <h5 class="shadow-black">{{network_item.menu_name}}</h5>
               {% endif %}
             {% endfor %}
               
@@ -54,8 +54,8 @@
                 {% else %}
                 {% assign domain = site.url %}
               {% endif %}
-                <li {% if network_item.class %}class="{{ network_item.class }}" {% endif %}>
-                  <a href="{{ domain }}{{ network_item.url }}" {% if network_item.url contains 'http' %}target="_blank" {% endif %} title="{{ network_item.title }}">{{ network_item.name }}</a>
+                <li {% if network_item.class %}class="{{network_item.class}}" {% endif %}>
+                  <a href="{{domain}}{{network_item.url}}" {% if network_item.url contains 'http' %}target="_blank" {% endif %} title="{{network_item.title}}">{{network_item.name}}</a>
                 </li>
             {% endfor %}
             </ul>
@@ -69,7 +69,7 @@
         <nav class="row">
           <section id="subfooter-left" class="b30 small-12 medium-6 columns">
             <ul class="inline-list">
-              <li>&copy; {{ site.time | date: '%Y' }} <a style="display:inline;" href="http://www.goudan-er.xyz/">{{ site.owner.name }}</a>，
+              <li>&copy; {{site.time | date: '%Y'}} <a style="display:inline;" href="http://www.goudan-er.xyz/">{{site.owner.name}}</a>，
               自豪地采用<a style="display:inline;" href="http://jekyllrb.com/" target="_blank">Jekyll</a>构建，主题来自<a style="display:inline;" href="http://phlow.github.io/feeling-responsive/">Feeling Responsive</a>和<a style="display:inline;" href="http://www.miloyip.com/">Miloyip</a>，
               <a style="display:inline;" href="https://github.com/goudan-er/goudan-er.github.io">GitHub</a>托管</li>
             </ul>
@@ -78,7 +78,7 @@
           <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
             <ul class="inline-list">
             {% for social_item in site.data.socialmedia %}
-              <li><a href="{{ social_item.url }}" target="_blank" class="{{ social_item.class }}" title="{{ social_item.title }}"></a></li>
+              <li><a href="{{social_item.url}}" target="_blank" class="{{social_item.class}}" title="{{social_item.title}}"></a></li>
             {% endfor %}
             </ul>
           </section>
