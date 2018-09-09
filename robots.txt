@@ -4,4 +4,4 @@
 # www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
 
 User-agent: *
-Sitemap: http://goudan-er.xyz/sitemap.xml
+Sitemap: https://goudan-er.github.io/sitemap.xml

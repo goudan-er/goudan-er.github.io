@@ -1,3 +1,3 @@
 # Goudan-er
 
-http://goudan-er.xyz/
+https://goudan-er.github.io/

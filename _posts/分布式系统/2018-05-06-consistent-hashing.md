@@ -2,11 +2,14 @@
 layout: page
 title: 一致性哈希算法
 teaser: "一致性哈希"
+
 categories:
     - share
     - system
 tags:
     - system
+
+published: true
 ---
 
 ## 从两个例子说起  
