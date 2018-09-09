@@ -23,7 +23,7 @@ image:
 
 ## Code
 
-<pre class="brush: cpp; highlight: [] auto-links: true; collapse: true" id = "simplecode">
+<pre class="brush: cpp; highlight: [] auto-links: true; collapse: true" id = "simpleblock">
 #include &lt;iostream&gt;
 #include &lt;string&gt;
 #include &lt;vector&gt;

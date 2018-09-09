@@ -22,7 +22,7 @@ ID3D11Device 和 ID3D11DeviceContext  接口是 Direct3D 最重要的接口，�
 
 device 和 context 由下面的函数创建：
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 HRESULT D3D11CreateDevice(
   _In_opt_ IDXGIAdapter *pAdapter,
   D3D_DRIVER_TYPE DriverType,
@@ -41,7 +41,7 @@ HRESULT D3D11CreateDevice(
 
 创建示例如下：
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 // Create the device and device context.
 
 UINT createDeviceFlags = 0;
@@ -79,7 +79,7 @@ if( featureLevel != D3D_FEATURE_LEVEL_11_0 )
 
 因为Direct3D 11 默认要支持4X多重采样，所以多重采样质量总大于0。
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 // Check 4X MSAA quality support for our back buffer format.
 // All Direct3D 11 capable devices support 4X MSAA for all render
 // target formats, so we only need to check quality support.
@@ -93,7 +93,7 @@ assert( m4xMsaaQuality &gt; 0 );
 
 首先我们需要填充一个 DXGI_SWAP_CHAIN_DESC 结构体，用来描述所要创建的 swap chain 的属性，DXGI_SWAP_CHAIN_DESC 定义如下：
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 typedef struct DXGI_SWAP_CHAIN_DESC {
   DXGI_MODE_DESC  BufferDesc;
   DXGI_SAMPLE_DESC SampleDesc;
@@ -120,7 +120,7 @@ typedef struct DXGI_MODE_DESC {
 
 示例代码：
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 // Fill out a DXGI_SWAP_CHAIN_DESC to describe our swap chain.
 
 DXGI_SWAP_CHAIN_DESC sd;
@@ -155,7 +155,7 @@ sd.Flags        = 0;
 
 - 创建 Swap Chain
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 // To correctly create the swap chain, we must use the IDXGIFactory that was
 // used to create the device.  If we tried to use a different IDXGIFactory instance
 // (by calling CreateDXGIFactory), we get an error: &quot;IDXGIFactory::CreateSwapChain:
@@ -181,7 +181,7 @@ ReleaseCOM(dxgiFactory);
 
 因为我们不能将 resource 直接绑定到渲染管线的一个阶段，而只能将 resource view 绑定到管线的一个阶段。所以，为了将back buffer 绑定到 output merge stage，我们需要创建一个后台缓冲区的视图，如下，
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 ID3D11RenderTargetView* mRenderTargetView;
 ID3D11Texture2D* backBuffer;
 mSwapChain-&gt;GetBuffer(0, __uuidof(ID3D11Texture2D),  // 0 &#34920;&#31034;&#21518;&#21488;&#32531;&#20914;&#21306;&#30340;&#32034;&#24341;&#22320;&#22336;&#65292;&#22240;&#20026;&#29616;&#22312;&#21482;&#26377;&#19968;&#22359;&#21518;&#21488;&#32531;&#20914;&#21306;&#65292;&#25152;&#20197;&#35774;&#32622;&#20026;0
@@ -195,7 +195,7 @@ ReleaseCOM(backBuffer);
 
 我们需要创建 深度/模板 缓冲区。深度缓冲区是一块保存深度数据的2D纹理。为了创建一块2D Texture，首先需要填充 D3D11_TEXTURE2D_DESC 结构体，然后调用 ID3D11Device::CreateTexture2D 方法。
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 typedef struct D3D11_TEXTURE2D_DESC {
   UINT            Width;
   UINT            Height;
@@ -214,7 +214,7 @@ typedef struct D3D11_TEXTURE2D_DESC {
 
 示例代码：
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 // Create the depth/stencil buffer and view.
 
 D3D11_TEXTURE2D_DESC depthStencilDesc;
@@ -248,7 +248,7 @@ HR(md3dDevice-&gt;CreateTexture2D(&amp;depthStencilDesc, 0, &amp;mDepthStencilBu
 
 创建 depth/stencil buffer 之后，创建视图：
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 HR(md3dDevice-&gt;CreateDepthStencilView(
 mDepthStencilBuffer,  // Resource we want to create a view to
 0,                    //  D3D11_DEPTH_STENCIL_VIEW_DESC, &#22240;&#20026;&#21019;&#24314; depth/stencil buffer view&#65292;&#25152;&#20197;&#21487;&#20197;&#25351;&#23450;&#20026;0
@@ -257,7 +257,7 @@ mDepthStencilBuffer,  // Resource we want to create a view to
 
 - 将渲染目标视图和深度/模板视图绑定到渲染管线的 Output Merge Stage  
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 // Bind the render target view and depth/stencil view to the pipeline.
 
 md3dImmediateContext-&gt;OMSetRenderTargets(1, &amp;mRenderTargetView, mDepthStencilView);
@@ -269,7 +269,7 @@ md3dImmediateContext-&gt;OMSetRenderTargets(1, &amp;mRenderTargetView, mDepthSte
 
 通常情况，我们会把3D场景渲染到整个back buffer中，但是，有时候我们想只绘制back buffer的一个子矩形区域中，后台缓冲的子矩形区域叫作视口（Viewport）。设置适口需要先填充一个 D3D11_VIEWPORT 结构体，示例代码如下：
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 // Set the viewport transform.
 
 mScreenViewport.TopLeftX = 0;

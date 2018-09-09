@@ -17,7 +17,7 @@ tags:
 ### 例2 - 对象缓存服务器    
 再假设Y网站需要部署M台对象缓存服务器来缓存大量图片、视频，加速用户访问时读取这些对象。仍希望可以将对象尽可能分散到每一个缓存服务器上，提升缓存服务器的利用率。同样的，采用对每一个对象进行哈希，然后用hash值模上M，即`key=hash(object)%M`。此时，若想加一台缓存服务器，则每一个对象的key变成了`key=hash(object)%(M+1)`，这意味着大量对象的映射都将失效，所以需要这些对象做迁移，保证缓存服务器集群可用。如下代码计算所示。  
 
-<pre class="brush: golang; auto-links: true; collapse: true" id="simplecode">
+<pre class="brush: golang; auto-links: true; collapse: true" id="simpleblock">
 package main
 
 import (

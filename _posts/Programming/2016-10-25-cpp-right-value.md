@@ -42,7 +42,7 @@ Object是一个类，set是类中的成员函数，为Object中的一个变量�
 
 左值引用声明符号是&，右值引用声明符号是&&，如：
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 void process_value(int & val)
 {
     cout << "LValue Processed: " << val << endl;
@@ -69,7 +69,7 @@ RValue Processed: 20
 从输出可以看出，20作为一个临时变量作为了右值被处理。  
 但是<u>如果临时对象通过一个接受右值的函数传递给另一个函数时，就会变成左值，因为这个临时对象在传递过程中，变成了命名对象</u>。比如：
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 void process_value(int & val)
 {
     cout << "LValue Processed: " << val << endl;
@@ -116,7 +116,7 @@ LValue Processed: 50
 
 C++11标准库提供了一个转移语义（资源所有权）的函数。
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 // 定义于头文件 &lt;utility&gt;
 
 template&lt; class T &gt;
@@ -125,7 +125,7 @@ typename std::remove_reference&lt;T&gt;::type&amp;&amp; move( T&amp;&amp; t );
 
 返回一个参数的右值引用，并留下一个空值参数。或者说是 “移动” 资源。比如：
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 #include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;string&gt;
@@ -150,7 +150,7 @@ The contents of the vector are &quot;Hello&quot;, &quot;Hello&quot;
 
 ```std::move``` 在提高 ```swap``` 函数性能上非常有帮助，一般来数，```swap``` 函数如下：
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 template&lt;class T&gt; swap(T &amp; a, T &amp; b)
 {
     T tmp(a);
@@ -161,7 +161,7 @@ template&lt;class T&gt; swap(T &amp; a, T &amp; b)
 
 使用 ```std::move``` 优化：
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 template&lt;class T&gt; swap(T &amp; a, T &amp; b)
 {
     T tmp(std::move(a));

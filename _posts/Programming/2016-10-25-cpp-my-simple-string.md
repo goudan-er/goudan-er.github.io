@@ -15,7 +15,7 @@ tags:
     1. 添加了sz，表示长度，不需要strlen
     2. 添加转移构造函数和转移赋值操作符，可以做右值引用和转移语义
 
-<pre class="brush: cpp; auto-links: true; collapse: true" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: true" id="simpleblock">
 class String {
 public:
     String() : data(nullptr), sz(0)

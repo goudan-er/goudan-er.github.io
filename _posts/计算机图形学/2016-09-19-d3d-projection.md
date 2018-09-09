@@ -128,7 +128,7 @@ g(z) 函数图像：
 
 Direct3D 11 中，投影矩阵可通过 XNA 数学库获得。
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 static XMMATRIX XMMatrixPerspectiveFovLH( // returns projection matrix, LH表示左手坐标系
 FLOAT FovAngleY, // vertical field of view angle in radians
 FLOAT AspectRatio, // aspect ratio = width / height

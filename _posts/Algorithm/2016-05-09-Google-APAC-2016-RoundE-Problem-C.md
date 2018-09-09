@@ -42,7 +42,7 @@ image:
 初始化，则根据X的每一位0或者1，对dp[0][j][0]和dp[0][j][1]赋值1或者0。
 
 # 代码
-<pre class="brush: cpp; highlight: [23, 35] auto-links: true; collapse: true" id = "simplecode">
+<pre class="brush: cpp; highlight: [23, 35] auto-links: true; collapse: true" id = "simpleblock">
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -22,7 +22,7 @@ tags:
 ## 代码
 用一个二维vector构建图的邻接表很方便。  
 
-<pre class="brush: cpp; highlight: [16] auto-links: true; collapse: true" id = "simplecode">
+<pre class="brush: cpp; highlight: [16] auto-links: true; collapse: true" id = "simpleblock">
 #include &lt;stdio.h&gt;
 #include &lt;vector&gt;
 #include &lt;iostream&gt;

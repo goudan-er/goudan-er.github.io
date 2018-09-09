@@ -26,7 +26,7 @@ tags:
 
 ### 代码
 dp实现。
-<pre class="brush: cpp; auto-links: true; collapse: true" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: true" id="simpleblock">
 int maxProfit(vector&lt;int&gt;&amp; prices)
 {
 	int minPrice = inf, n = prices.size(), ret = 0;
@@ -49,7 +49,7 @@ int maxProfit(vector&lt;int&gt;&amp; prices)
 允许任意次交易，所以，只需要对每一个递增区间求最大利润即可。
 
 ### 代码
-<pre class="brush: cpp; auto-links: true; collapse: true" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: true" id="simpleblock">
 int maxProfit(vector&lt;int&gt;&amp; prices)
 {
 	int ret = 0, n = prices.size();
@@ -76,7 +76,7 @@ int maxProfit(vector&lt;int&gt;&amp; prices)
 ```max(f[j]+b[j])```为最后的结果。  
 
 ### 代码
-<pre class="brush: cpp; auto-links: true; collapse: true" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: true" id="simpleblock">
 int maxProfit(vector&lt;int&gt;&amp; prices)
 {
 	int n = prices.size(), minBuy, maxSell;
@@ -112,7 +112,7 @@ int maxProfit(vector&lt;int&gt;&amp; prices)
 
 ### 算法  
 这题一开始想了一个二维dp，dp[i][j]表示前i天进行j次交易，然后一个二维数组last[i][j]记录dp[i][j]最后一次交易的第k，维护一个单调递增队列，为了可以快速找到第k天到当前最小的价格。然后滚动数组优化下内存，但是还是MLE。大概代码如下，不想看就果断略过。
-<pre class="brush: cpp; auto-links: true; collapse: true" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: true" id="simpleblock">
 for (int j = 1; j &lt;= k; j++) {
 	front = 0;
 	rear = 0;
@@ -145,7 +145,7 @@ for (int j = 1; j &lt;= k; j++) {
 此外，还有一个小优化，当k很大，以至于2k >= n，也就是n天可以进行任意次数操作，所以变成了问题II，直接采用问题II的算法。
 
 ### 代码
-<pre class="brush: cpp; auto-links: true; collapse: true" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: true" id="simpleblock">
 class Solution {
 private:
 	int maxProfit(vector&lt;int&gt;&amp; prices)

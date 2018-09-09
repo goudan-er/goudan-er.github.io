@@ -11,7 +11,7 @@ tags:
 
 - Lazy Singleton（单例模式一般写法 ）
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 class Singleton {
 private:
     Singleton();
@@ -43,7 +43,7 @@ Effective C++ Item 04 上提到的一种实现。把 non-local static 对象替�
 
 同时，C++0x之后，这种实现方式编译器将保证是线程安全的。
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 class Singleton {
 private:
     Singleton();
@@ -64,7 +64,7 @@ public:
 
 也就是说，在判断 ```instance == nullptr``` 前加锁，但是加锁是有开销的，可以稍加修改代码，使得只在第一次创建实例时加锁。
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 static Singleton& getInstance()
 {
     if (instance == nullptr) {
@@ -79,7 +79,7 @@ static Singleton& getInstance()
 
 C++11中，标准库提供了原子操作，一种DCLP实现如下：(参考自[这里](http://preshing.com/20130930/double-checked-locking-is-fixed-in-cpp11/))
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 class Singleton {
 private:
     Singleton();

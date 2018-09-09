@@ -19,7 +19,7 @@ Coursera上不仅有课后作业，还有面试题目，下面分析一下所给
 
 首先给出一份带有路径压缩的并查集代码。  
 
-<pre class="brush: cpp; highlight: [16] auto-links: true; collapse: true" id = "simplecode">
+<pre class="brush: cpp; highlight: [16] auto-links: true; collapse: true" id = "simpleblock">
 const int N = 111111;
 
 int id[N];

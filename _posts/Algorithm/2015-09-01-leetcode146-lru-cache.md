@@ -33,7 +33,7 @@ LRU, Least Recently Used, 最近最少使用算法，是一种置换算法，操
 
 ## 代码
 
-<pre class="brush: cpp; highlight: [15,19,21,22]; auto-links: true; collapse: true" id="simplecode">
+<pre class="brush: cpp; highlight: [15,19,21,22]; auto-links: true; collapse: true" id="simpleblock">
 
 #include &lt;stdio.h&gt;
 #include &lt;string.h&gt;

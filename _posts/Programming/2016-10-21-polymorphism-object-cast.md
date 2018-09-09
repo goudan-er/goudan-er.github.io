@@ -22,7 +22,7 @@ tags:
     对象转型其实是一个复制构造，复制对象的数据属性，但是并不赋值隐藏着的vptr，而是安插新的vptr。
 
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 class Base {
 public:
     Base(int _val) : val(_val) {}

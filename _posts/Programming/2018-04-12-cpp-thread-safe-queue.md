@@ -15,7 +15,7 @@ tags:
 
 见代码。
 
-<pre class="brush: cpp; auto-links: true; collapse: false" id="simplecode">
+<pre class="brush: cpp; auto-links: true; collapse: false" id="simpleblock">
 #include &lt;mutex&gt;
 #include &lt;queue&gt;
 #include &lt;thread&gt;

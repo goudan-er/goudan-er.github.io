@@ -20,7 +20,7 @@ published: false
     - class 专属常量：为了将常量限制于class内，则要将变量声明为static，表示只有一份，同时定义时不需要再设初值。  
     - 使用inline代替宏函数。如下面的例子，a的递增次数与比较对象有关！所以，使用inline函数，可以避免这样的问题。
 
-    <pre class="brush: cpp; highlight: [1]; auto-links: true;" id = "simplecode">
+    <pre class="brush: cpp; highlight: [1]; auto-links: true;" id = "simpleblock">
         #define CALL_WITH_MAX(a, b) f((a) > (b) ? (a) : (b))
         ...
         int a = 5, b = 0, c = 10;
@@ -45,7 +45,7 @@ published: false
 - item 10：令 `operator=` 返回一个 reference to *this
     - 为了实现连续赋值 `x = y = z` ，先z赋值给y，然后更新后的y返回赋值给x
 
-    <pre class="brush: cpp; highlight: [1,10]; auto-links: true;" id = "simplecode">
+    <pre class="brush: cpp; highlight: [1,10]; auto-links: true;" id = "simpleblock">
         Widget& operator= (const Widget& rhs) // 返回类型是reference
         {
             ... // 赋值操作
