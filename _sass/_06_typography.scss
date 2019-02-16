@@ -52,6 +52,7 @@ p {
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
+    margin-bottom: 0.25rem;
 }
 p a,
 article a {
@@ -194,7 +195,7 @@ code {
 #simpleblock
 {
     border: 1px solid #ADADAD;
-    margin-bottom: 1.25em;
+    margin-bottom: 1.25rem;
     /*padding: .2em;*/
 }
 
