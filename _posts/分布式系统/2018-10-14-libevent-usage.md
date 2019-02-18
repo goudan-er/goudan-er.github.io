@@ -11,14 +11,14 @@ tags:
     - programming
 ---
 
-之前介绍了[I/O多路转接](../multiplexing/)，是一种高效的unix系统I/O模型。[libevent](https://libevent.org/) 是轻量级函数库，封装了不同操作系统底层最高效的网络IO模型，包括linux的poll/epoll模型，windows的compIO，freebsd的kqueue。[wikipedia介绍](https://en.wikipedia.org/wiki/Libevent):
+之前介绍了[I/O多路转接](../io-multiplexing/)，是一种高效的unix系统I/O模型。[libevent](https://libevent.org/) 是轻量级函数库，封装了不同操作系统底层最高效的网络IO模型，包括linux的poll/epoll模型，windows的compIO，freebsd的kqueue。[wikipedia介绍](https://en.wikipedia.org/wiki/Libevent):
 > libevent is a software library that provides asynchronous event notification. The libevent API provides a mechanism to execute a callback function when a specific event occurs on a file descriptor or after a timeout has been reached. libevent also supports callbacks triggered by signals and regular timeouts.
 
 本篇介绍一下libevent的基本使用。
 
 ## Timer
 利用`event_add`传入timeout参数，实现timer。
-<pre class="brush: c++; auto-links: true; collapse: false" id="simpleblock">
+<pre class="brush: c++; auto-links: true; collapse: true" id="simpleblock">
 #include &lt;stdio.h&gt;
 #include &lt;string.h&gt;
 #include &lt;event2/event.h&gt;
@@ -67,7 +67,8 @@ By default, whenever a pending event becomes active (because its fd is ready to 
 
 ## TCP服务器
 使用Libevent的`bufferevent`可以很容易实现非阻塞socket编程，，缓冲区处理也变得简单。
-<pre class="brush: c++; auto-links: true; collapse: false", id="simpleblock">
+
+<pre class="brush: c++; auto-links: true; collapse: true" id="simpleblock">
 #include &lt;stdio.h&gt;
 #include &lt;string.h&gt;
 #include &lt;assert.h&gt;
@@ -143,7 +144,7 @@ int main()
 
 ## HTTP服务器
 使用libevent内置的http相关接口，可以很容易的构建一个Http Server。如果想实现一个https server，也是可行的，可参考[这里](https://github.com/ppelleti/https-example/blob/master/https-server.c)
-<pre class="brush: c++; auto-links: true; collapse: false" id="simpleblock">
+<pre class="brush: c++; auto-links: true; collapse: true" id="simpleblock">
 #include &lt;stdio.h&gt;
 #include &lt;string.h&gt;
 #include &lt;event2/event.h&gt;
