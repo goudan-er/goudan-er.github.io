@@ -1,16 +1,35 @@
-{% comment %}TODO consider https://developers.google.com/custom-search/docs/element{% endcomment %}
-{% capture google_search_site %}{{site.url}}{{site.baseurl}}/{% endcapture %}
-<script language="Javascript" type="text/javascript">
-	function google_search() {
-		var query = document.getElementById("google-search").value;
-		window.open("https://www.google.com/search?q=" + query + "+site:" + "{{google_search_site | cgi_escape}}");
-	}
-</script>
+{% assign all_posts = site.posts | sort: 'date' | reverse %}
+{% capture search_hint %}{{ site.data.language.enter_search_term }}{% endcapture %}
+<section class="content-card search-panel">
+  <h2>站内搜索</h2>
+  <p>本地即时过滤，不依赖外部搜索引擎。</p>
+  <label for="local-search-input" class="search-panel__label">{{ search_hint }}</label>
+  <input id="local-search-input" type="search" placeholder="{{ search_hint }}" autocomplete="off">
+  <ul id="local-search-results" class="search-results">
+    {% for post in all_posts %}
+    <li data-search-item data-title="{{ post.title | downcase | escape }}" data-summary="{% if post.meta_description %}{{ post.meta_description | strip_html | downcase | escape }}{% elsif post.teaser %}{{ post.teaser | strip_html | downcase | escape }}{% elsif post.excerpt %}{{ post.excerpt | strip_html | downcase | escape }}{% endif %}">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
 
-<form id="search" onsubmit="google_search(); return false;">
-	<input type="text" id="google-search" placeholder="{{site.data.language.enter_search_term}}">
-</form>
-<noscript>
-	Search <a href="https://www.google.com/search?q=site:{{google_search_site | cgi_escape}}" target="_blank">Google</a> for:
-	<pre><code>search-term site:{{google_search_site}}</code></pre>
-</noscript>
+<script>
+  (function () {
+    var input = document.getElementById('local-search-input');
+    var resultItems = document.querySelectorAll('[data-search-item]');
+    if (!input || !resultItems.length) {
+      return;
+    }
+    input.addEventListener('input', function () {
+      var query = input.value.trim().toLowerCase();
+      resultItems.forEach(function (item) {
+        var title = item.getAttribute('data-title') || '';
+        var summary = item.getAttribute('data-summary') || '';
+        var match = !query || title.indexOf(query) !== -1 || summary.indexOf(query) !== -1;
+        item.style.display = match ? '' : 'none';
+      });
+    });
+  })();
+</script>

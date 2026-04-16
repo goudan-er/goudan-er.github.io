@@ -4,14 +4,7 @@ format: blog-index
 # Don't index these pages dear Google.
 noindex: true
 ---
-
-<div class="row">
-	<div class="medium-8 columns t30">
-		{% include pagination.html %}
-	</div><!-- /.medium-7.columns -->
-
-
-<!-- 	<div class="medium-4 columns t30">
-		{% include sidebar.html %}
-	</div> --><!-- /.medium-5.columns -->
-</div><!-- /.row -->
+<section class="content-card blog-listing">
+  <h1 class="blog-listing__title">{{ page.title }}</h1>
+  {% include pagination.html %}
+</section>
