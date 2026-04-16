@@ -196,7 +196,7 @@ comments:
   giscus:
     src: "https://giscus.app/client.js"
     repo: "goudan-er/goudan-er.github.io"
-    repo_id: ""
+    repo_id: "MDEwOlJlcG9zaXRvcnkxMjQyNTQ1NDg="
     category: "General"
     category_id: ""
     mapping: "pathname"
