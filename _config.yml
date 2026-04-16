@@ -101,7 +101,12 @@ defaults:
       comments: true
       author: "your_author_name"
 
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
 gems:
+  - jekyll-paginate
   - jekyll-sitemap
 
 #       _   __            _             __  _           

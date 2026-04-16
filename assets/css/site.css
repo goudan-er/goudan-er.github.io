@@ -76,6 +76,10 @@ a:hover {
   display: none;
   border: 1px solid var(--line);
   background: #fff;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.2;
   border-radius: 8px;
   padding: 0.45rem 0.7rem;
 }

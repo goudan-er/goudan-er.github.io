@@ -1,7 +1,7 @@
 {% if page.comments %}
 <section class="comments-block" id="comments">
   <h2>{{ site.data.language.comments_headline }}</h2>
-  {% if site.comments.provider == "giscus" and site.comments.giscus.repo and site.comments.giscus.repo_id and site.comments.giscus.category and site.comments.giscus.category_id %}
+  {% if site.comments.provider == "giscus" and site.comments.giscus.repo != blank and site.comments.giscus.repo_id != blank and site.comments.giscus.category != blank and site.comments.giscus.category_id != blank %}
   <script
     src="{{ site.comments.giscus.src | default: 'https://giscus.app/client.js' }}"
     data-repo="{{ site.comments.giscus.repo }}"
