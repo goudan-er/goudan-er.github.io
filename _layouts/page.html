@@ -2,68 +2,35 @@
 layout: default
 format: post
 ---
-<div class="row t30">
-	<div class="small-12 columns {% if page.sidebar == "left" %} medium-push-4{% endif %}">
-		<article itemscope itemtype="http://schema.org/Article">
-			<header>
-				{% if page.image.title %}
-				<figure>
-					<img src="{{site.url}}/images/{{page.image.title}}" width="970" alt="{{page.title | escape_once}}" itemprop="image">
+<article class="content-card post-page" itemscope itemtype="http://schema.org/Article">
+  <header class="post-page__header">
+    {% if page.subheadline %}<p class="post-page__subheadline">{{ page.subheadline }}</p>{% endif %}
+    <h1 itemprop="name">{{ page.title }}</h1>
+    {% if page.date %}
+    <p class="post-page__meta">{{ page.date | date: "%Y-%m-%d" }}{% if page.categories %} · {{ page.categories | join: " / " }}{% endif %}</p>
+    {% endif %}
+  </header>
 
-					{% if page.image.caption_url and page.image.caption %}
-					<figcaption class="text-right">
-						<a href="{{page.image.caption_url}}">{{page.image.caption}}</a>
-					</figcaption>
-					{% elsif page.image.caption %}
-					<figcaption class="text-right">
-						{{page.image.caption}}
-					</figcaption>
-					{% endif %}
-				</figure>
-				{% endif %}
+  {% if page.image.title %}
+  <figure class="post-page__figure">
+    <img src="{{ '/images/' | append: page.image.title | relative_url }}" alt="{{ page.title | escape_once }}" itemprop="image">
+    {% if page.image.caption_url and page.image.caption %}
+    <figcaption><a href="{{ page.image.caption_url }}">{{ page.image.caption }}</a></figcaption>
+    {% elsif page.image.caption %}
+    <figcaption>{{ page.image.caption }}</figcaption>
+    {% endif %}
+  </figure>
+  {% endif %}
 
-				<span itemprop="name">
-					{% if page.subheadline %}<p class="subheadline">{{page.subheadline}}</p>{% endif %}
-					<h1>{{page.title}}</h1>
-				</span>
-			</header>
+  <div class="post-content" itemprop="articleSection">
+    {{ content }}
+  </div>
 
+  {% if page.show_meta == true %}
+  {% include meta_information.html %}
+  {% endif %}
 
-			{% if page.teaser %}
-<!-- 			<p class="teaser" itemprop="description">
-				{{page.teaser}}
-			</p> -->
-			{% endif %}
-
-			<span itemprop="articleSection">
-			{{content}}
-			</span>
-
-<!-- 			<p>
-			{% include qrcode.html %}
-			</p> -->
-
-			{% if page.show_meta == true %}
-			{% include meta_information.html %}
-			{% endif %}
-
-			{% if page.comments == true %}
-			{% include comments.html %}
-			{% endif %}
-		</article>
-	</div><!-- /.medium-8.columns -->
-
-
-	{% if page.sidebar == "left" %}
-	<div class="medium-4 columns medium-pull-8">
-		{% include sidebar.html %}
-	</div><!-- /.medium-4.columns -->
-	{% endif %}
-
-
-	{% if page.sidebar == "right" %}
-	<div class="medium-4 columns">
-		{% include sidebar.html %}
-	</div><!-- /.medium-4.columns -->
-	{% endif %}
-</div><!-- /.row -->
+  {% if page.comments == true %}
+  {% include comments.html %}
+  {% endif %}
+</article>

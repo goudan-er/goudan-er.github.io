@@ -1,21 +1,29 @@
 {% if page.comments %}
-	<h3 id="comments" class="t60">{{site.data.language.comments_headline}}</h3>
-
-    <div id="disqus_thread"></div>
-    <script>
-        var disqus_config = function () {
-        this.page.url = "{{site.url}}{{page.url}}";
-        this.page.identifier = "{{page.id}}";
-        };
-        
-        (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://goudan-er.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<section class="comments-block" id="comments">
+  <h2>{{ site.data.language.comments_headline }}</h2>
+  {% if site.comments.provider == "giscus" and site.comments.giscus.repo != blank and site.comments.giscus.repo_id != blank and site.comments.giscus.category != blank and site.comments.giscus.category_id != blank %}
+  <script
+    src="{{ site.comments.giscus.src | default: 'https://giscus.app/client.js' }}"
+    data-repo="{{ site.comments.giscus.repo }}"
+    data-repo-id="{{ site.comments.giscus.repo_id }}"
+    data-category="{{ site.comments.giscus.category }}"
+    data-category-id="{{ site.comments.giscus.category_id }}"
+    data-mapping="{{ site.comments.giscus.mapping | default: 'pathname' }}"
+    data-strict="{{ site.comments.giscus.strict | default: '0' }}"
+    data-reactions-enabled="{{ site.comments.giscus.reactions_enabled | default: '1' }}"
+    data-emit-metadata="{{ site.comments.giscus.emit_metadata | default: '0' }}"
+    data-input-position="{{ site.comments.giscus.input_position | default: 'top' }}"
+    data-theme="{{ site.comments.giscus.theme | default: 'preferred_color_scheme' }}"
+    data-lang="{{ site.comments.giscus.lang | default: 'zh-CN' }}"
+    data-loading="{{ site.comments.giscus.loading | default: 'lazy' }}"
+    crossorigin="anonymous"
+    async>
+  </script>
+  <noscript>请开启 JavaScript 后查看评论。</noscript>
+  {% else %}
+  <p class="comments-block__hint">
+    评论系统尚未完成配置。请先在 GitHub 仓库开启 Discussions，并在 `_config.yml` 中填写 `comments.giscus.category_id` 后重新发布。
+  </p>
+  {% endif %}
+</section>
 {% endif %}
-
-

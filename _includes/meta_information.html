@@ -1,30 +1,28 @@
-			<div id="page-meta" class="t30">
-				<p>
-					<!-- Look the author details up from the site config. -->
-					{% assign author = site.data.authors[page.author] %}
-					<!-- Output author details if some exist. -->
-					{% if author %}
-					<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name" class="pr20 icon-edit"><a href="{{author.url}}" target="_blank"> {{author.name}}</a></span>
-				</span>
-				{% endif %}
+<section id="page-meta" class="post-meta">
+  <p>
+    {% assign author = site.data.authors[page.author] %}
+    {% if author %}
+    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span itemprop="name">作者：<a href="{{ author.url }}" target="_blank" rel="noopener noreferrer">{{ author.name }}</a></span>
+    </span>
+    {% endif %}
+    {% if page.date %}
+    <time datetime="{{ page.date | date: "%Y-%m-%d" }}" itemprop="datePublished"> · 发布时间：{{ page.date | date: "%Y-%m-%d" }}</time>
+    {% endif %}
+    {% if page.categories %} · 分类：{{ page.categories | join: " / " }}{% endif %}
+  </p>
 
-				{% if page.date %}
-				<time class="icon-calendar pr20" datetime="{{page.date | date: "%Y-%m-%d"}}" itemprop="datePublished"> {{page.date | date: "%Y-%m-%d"}}</time>
-				{% endif %}
+  {% if page.tags %}
+  <p>标签：{% for tag in page.tags %}<span class="post-meta__tag">{{ tag }}</span>{% unless forloop.last %} {% endunless %}{% endfor %}</p>
+  {% endif %}
 
-				{% if page.categories %}<span class="icon-archive pr20"> {{page.categories | join: ' · ' | upcase}}{% endif %}</span>
-				<br>
-				<span class="pr20">{% for tag in page.tags %}<span class="icon-price-tag pr10"> {{tag}}</span> {% endfor %}</span>
-			</p>
-
-			<div id="post-nav" class="row">
-				
-				{% if page.previous.url %} 
-				<div class="small-5 columns"><a class="button small radius prev" href="{{site.url}}{{page.previous.url}}">&laquo; {{page.previous.title}}</a></div><!-- /.small-4.columns -->
-				{% endif %} 
-				<div class="small-2 columns text-center"><a class="radius button small" href="{{site.url}}/blog/archive/" title="Blog {{site.data.language.archive}}">{{site.data.language.archive}}</a></div><!-- /.small-4.columns -->
-				{% if page.next.url %} 
-				<div class="small-5 columns text-right"><a class="button small radius next" href="{{site.url}}{{page.next.url}}">{{page.next.title}} &raquo;</a></div><!-- /.small-4.columns -->
-				{% endif %} 
-			</div>
-			</div><!--  /.page-meta -->
+  <nav id="post-nav" class="post-nav">
+    {% if page.previous.url %}
+    <a class="post-nav__link" href="{{ page.previous.url | relative_url }}">&laquo; {{ page.previous.title }}</a>
+    {% endif %}
+    <a class="post-nav__link" href="{{ '/blog/archive/' | relative_url }}">{{ site.data.language.archive }}</a>
+    {% if page.next.url %}
+    <a class="post-nav__link" href="{{ page.next.url | relative_url }}">{{ page.next.title }} &raquo;</a>
+    {% endif %}
+  </nav>
+</section>

@@ -2,15 +2,17 @@
 layout: compress
 ---
 {% include head.html %}
-<body id="top-of-page" class="{{page.format}}">
-	{% include navigation.html %}
+<body id="top-of-page" class="site-body {{ page.format }}">
+  {% include navigation.html %}
+  {% include masthead.html %}
 
-	{% include masthead.html %}
+  <main class="site-main" id="site-main-content">
+    <div class="site-container">
+      {{ content }}
+    </div>
+  </main>
 
-	{{content}}
-
-	{% include footer.html %}
-	
-	{% include footer_scripts.html %}
+  {% include footer.html %}
+  {% include footer_scripts.html %}
 </body>
 </html>

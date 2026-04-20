@@ -101,7 +101,12 @@ defaults:
       comments: true
       author: "your_author_name"
 
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
 gems:
+  - jekyll-paginate
   - jekyll-sitemap
 
 #       _   __            _             __  _           
@@ -186,6 +191,23 @@ msapplication_tilecolor:                "#fabb00"
 
 disqus_shortname: goudan-er
 
+comments:
+  provider: giscus
+  giscus:
+    src: "https://giscus.app/client.js"
+    repo: "goudan-er/goudan-er.github.io"
+    repo_id: "MDEwOlJlcG9zaXRvcnkxMjQyNTQ1NDg="
+    category: "General"
+    category_id: "DIC_kwDOB2f5VM4C7Sbk"
+    mapping: "pathname"
+    strict: "0"
+    reactions_enabled: "1"
+    emit_metadata: "0"
+    input_position: "top"
+    theme: "preferred_color_scheme"
+    lang: "zh-CN"
+    loading: "lazy"
+
 
 #      _____                
 #     / ___/____ ___________
@@ -209,6 +231,7 @@ sass:
 # used in _includes/footer_scripts.html
 
 google_analytics_tracking_id: UA-86957751-1
+enable_google_analytics: false
 
 google_site_verification: kR4AEq0Nd3LZNiAvHRIGuQ0POoXkoohDCbML3uSjUv8
 
