@@ -7,12 +7,24 @@ permalink: "/blog/archive/"
 <section class="content-card archive-page">
   <h1>{{ page.title }}</h1>
   {% if page.teaser %}<p>{{ page.teaser }}</p>{% endif %}
+  {% assign exclude_titles = "工作周报,工作日志" | split: "," %}
   <ul class="archive-list">
     {% for post in site.posts limit:1000 %}
+    {% assign is_report = false %}
+    {% if post.categories contains 'report' or post.categories contains 'worklog' %}
+      {% assign is_report = true %}
+    {% endif %}
+    {% for keyword in exclude_titles %}
+      {% if post.title contains keyword %}
+        {% assign is_report = true %}
+      {% endif %}
+    {% endfor %}
+    {% unless is_report %}
     <li>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       <span>{{ post.date | date: "%Y-%m-%d" }}</span>
     </li>
+    {% endunless %}
     {% endfor %}
   </ul>
 </section>

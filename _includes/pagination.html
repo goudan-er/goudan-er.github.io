@@ -8,6 +8,11 @@
 
 
 {% for post in paginator.posts %}
+{% assign is_journal_post = false %}
+{% if post.categories contains 'report' or post.categories contains 'worklog' or post.title contains '工作周报' %}
+{% assign is_journal_post = true %}
+{% endif %}
+{% unless is_journal_post %}
 <article class="post-item">
   <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
   <p class="post-item__meta">{{ post.date | date: "%Y-%m-%d" }}{% if post.categories %} · {{ post.categories | join: " / " }}{% endif %}</p>
@@ -16,6 +21,7 @@
   </p>
   <p><a href="{{ post.url | relative_url }}" title="{{ site.data.language.read }} {{ post.title | escape_once }}"><strong>{{ site.data.language.read_more }}</strong></a></p>
 </article>
+{% endunless %}
 {% endfor %}
 
 <nav class="pager" id="pagination">

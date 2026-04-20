@@ -4,7 +4,7 @@ format: blog-index
 ---
 <section class="home-intro">
   <p class="home-intro__title">Wiki Index</p>
-  <p class="home-intro__desc">以条目化组织知识：优先可检索、可归档、可追溯。</p>
+  <p class="home-intro__desc">以条目化组织知识：优先可检索、可归档、可追溯。博客流里默认隐藏工作流水日志。</p>
 </section>
 
 {% unless site.posts == empty %}
@@ -21,8 +21,19 @@ format: blog-index
     <div class="wiki-card">
       <h2 class="wiki-card__title">最近条目</h2>
       <ul class="wiki-post-list">
-        {% for post in site.posts limit:12 %}
+        {% assign entry_count = 0 %}
+        {% for post in site.posts %}
+        {% assign post_categories = post.categories | join: ' ' | downcase %}
+        {% assign post_title = post.title | downcase %}
+        {% assign is_worklog = false %}
+        {% if post_categories contains 'report' or post_categories contains 'worklog' or post_title contains '工作周报' %}
+        {% assign is_worklog = true %}
+        {% endif %}
+        {% unless is_worklog %}
         <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><span>{{ post.date | date: "%Y-%m-%d" }}</span></li>
+        {% assign entry_count = entry_count | plus: 1 %}
+        {% if entry_count >= 12 %}{% break %}{% endif %}
+        {% endunless %}
         {% endfor %}
       </ul>
       <p class="wiki-card__action"><a href="{{ '/blog/archive/' | relative_url }}">查看完整归档</a></p>
