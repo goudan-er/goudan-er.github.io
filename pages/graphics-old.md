@@ -1,7 +1,5 @@
 ---
-layout: page
-show_meta: false
-title: "计算机图形学"
+layout: redirect
 permalink: "/graphics-old/"
+redirect_to: "/topics/#graphics"
 ---
-{% include list-posts.html category='graphics' %}

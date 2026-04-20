@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /search/
-title: "Search"
+title: "站内搜索"
 sitemap: false
 show_meta: false
 ---

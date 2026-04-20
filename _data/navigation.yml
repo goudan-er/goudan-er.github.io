@@ -1,43 +1,23 @@
-- title: <span class="icon-home"/>
-  url: ""
+- title: "首页"
+  url: "/"
   side: left
 
-- title: "所有文章"
+- title: "全部文章"
   url: "/blog/archive/"
   side: left
 
-- title: "Avengers"
-  url: "/share/archive/"
-  side: left
-  dropdown:
-    - title: "后端技术/系统/分布式"
-      url: "/share/system/"
-    - title: "C++"
-      url: "/share/cpp/"
-    - title: "Go"
-      url: "/share/go/"
-    - title: "杂"
-      url: "/share/misc/"
-
-- title: "Algorithm"
-  url: "/algorithm/archive/"
+- title: "主题索引"
+  url: "/topics/"
   side: left
 
-- title: "Graphics"
-  url: "/graphics/archive/"
-  side: left
-
-- title: "工作周报"
+- title: "项目日志"
   url: "/report/"
   side: left
 
-- title: "Palette"
-  url: "/palette/"
-  side: right
-
-- title: "Search"
+- title: "搜索"
   url: "/search/"
   side: right
-- title: "简历"
-  url: "/cv/"
+
+- title: "关于"
+  url: "/info/"
   side: right

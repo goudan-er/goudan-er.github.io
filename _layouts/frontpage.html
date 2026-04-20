@@ -3,34 +3,29 @@ layout: default
 format: blog-index
 ---
 <section class="home-intro">
-  <p class="home-intro__title">最近更新</p>
-  <p class="home-intro__desc">聚焦编程、系统设计、算法与图形学，采用简洁可读的技术博客与知识库风格。</p>
+  <p class="home-intro__title">Wiki Index</p>
+  <p class="home-intro__desc">以条目化组织知识：优先可检索、可归档、可追溯。</p>
 </section>
 
 {% unless site.posts == empty %}
 <section class="home-section">
-  <div class="home-grid">
-    <div class="card">
-      <h2 class="card__title">最新文章</h2>
-      {% for post in site.posts limit:1 %}
-      <article class="post-item post-item--featured">
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p class="post-item__meta">{{ post.date | date: "%Y-%m-%d" }} · {{ post.categories | join: " / " }}</p>
-        <p>{% if post.meta_description %}{{ post.meta_description | strip_html | escape }}{% elsif post.teaser %}{{ post.teaser | strip_html | escape }}{% elsif post.excerpt %}{{ post.excerpt | strip_html | escape }}{% endif %}</p>
-      </article>
-      {% endfor %}
+  <div class="wiki-grid">
+    <div class="wiki-card">
+      <h2 class="wiki-card__title">核心入口</h2>
+      <ul class="wiki-links">
+        <li><a href="{{ '/topics/' | relative_url }}">主题索引</a><span>按技术主题浏览</span></li>
+        <li><a href="{{ '/blog/archive/' | relative_url }}">所有文章</a><span>按时间归档浏览</span></li>
+        <li><a href="{{ '/search/' | relative_url }}">站内搜索</a><span>关键字即时过滤</span></li>
+      </ul>
     </div>
-    <div class="card">
-      <h2 class="card__title">近期文章</h2>
-      <ul class="post-list">
-        {% for post in site.posts limit:8 %}
-        <li>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        </li>
+    <div class="wiki-card">
+      <h2 class="wiki-card__title">最近条目</h2>
+      <ul class="wiki-post-list">
+        {% for post in site.posts limit:12 %}
+        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><span>{{ post.date | date: "%Y-%m-%d" }}</span></li>
         {% endfor %}
       </ul>
-      <p class="card__action"><a href="{{ '/blog/archive/' | relative_url }}">查看全部归档 →</a></p>
+      <p class="wiki-card__action"><a href="{{ '/blog/archive/' | relative_url }}">查看完整归档</a></p>
     </div>
   </div>
 </section>

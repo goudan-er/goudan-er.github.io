@@ -1,7 +1,7 @@
 ---
 layout: page
 show_meta: false
-title: "Algorithm"
-permalink: "/share/algorithm/"
+title: "算法"
+permalink: "/topics/algorithm/"
 ---
 {% include list-posts.html category='algorithm' %}
