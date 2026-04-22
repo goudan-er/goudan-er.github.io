@@ -23,24 +23,5 @@ header:
         <p>{% if post.meta_description %}{{ post.meta_description | strip_html | escape }}{% elsif post.teaser %}{{ post.teaser | strip_html | escape }}{% elsif post.excerpt %}{{ post.excerpt | strip_html | escape }}{% endif %}</p>
       </article>
     {% endfor %}
-
-
-<!--     <nav id="pagination">
-        {% if paginator.previous_page %}
-          {% if paginator.previous_page == 1 %}
-          <a class="radius button small" href="{{site.url}}/share/" title="{{site.data.language.previous_posts}}">&laquo; {{site.data.language.previous_posts}}</a>
-          {% else %}
-          <a class="radius button small" href="{{site.url}}/share/page{{paginator.previous_page}}/" title="{{site.data.language.previous_posts}}">&laquo; {{site.data.language.previous}}</a>
-          {% endif %}
-        {% endif %}
-
-        <a class="radius button small" href="{{site.url}}/share/archive/" title="{{site.data.language.share_archive}}">{{site.data.language.share_archive}}</a>
-            
-        {% if paginator.next_page %} 
-        <a class="radius button small" href="{{site.url}}/share/page{{paginator.next_page}}/" title="{{site.data.language.next_posts}}">{{site.data.language.next}} &raquo;</a>
-        {% endif %} 
-    </nav> -->
-
-
     </section>
 </div><!-- /.row -->
