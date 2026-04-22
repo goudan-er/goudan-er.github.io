@@ -12,8 +12,6 @@ header:
     caption_url: https://unsplash.com/
 ---
 
-<!-- ## To Be Continued -->
-
 <audio class="mejs-player">
     <source src="/medias/palette.mp3" />
 </audio>

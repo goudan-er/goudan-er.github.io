@@ -1,9 +1,3 @@
-{% comment %}
-*  
-*  http://stackoverflow.com/questions/9612235/what-are-some-good-ways-to-implement-breadcrumbs-on-a-jekyll-site
-*  
-{% endcomment %}
-
 <nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
  <li><a href="{{site.url}}">{{site.data.language.breadcrumb_start}}</a></li>
  {% assign crumbs = page.url | split: '/' %}
