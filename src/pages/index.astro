@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { getVisiblePosts } from "../lib/content";
+
+const posts = await getVisiblePosts();
+const latest = posts.slice(0, 12);
+---
+<BaseLayout title="Goudan-er" description="以条目化组织知识：优先可检索、可归档、可追溯。">
+  <section class="home-intro">
+    <p class="home-intro__title">Wiki Index</p>
+    <p class="home-intro__desc">以条目化组织知识：优先可检索、可归档、可追溯。</p>
+  </section>
+
+  <section class="home-section">
+    <div class="wiki-grid">
+      <div class="wiki-card">
+        <h2 class="wiki-card__title">核心入口</h2>
+        <ul class="wiki-links">
+          <li><a href="/topics/">主题索引</a><span>按技术主题浏览</span></li>
+          <li><a href="/blog/">所有文章</a><span>按时间归档浏览</span></li>
+          <li><a href="/search/">站内搜索</a><span>关键字即时过滤</span></li>
+        </ul>
+      </div>
+      <div class="wiki-card">
+        <h2 class="wiki-card__title">最近条目</h2>
+        <ul class="wiki-post-list">
+          {latest.map((post) => <PostCard post={post} compact={true} />)}
+        </ul>
+        <p class="wiki-card__action"><a href="/blog/">查看完整归档</a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -2,3 +2,6 @@
 /.sass-cache
 /.bundle
 /vendor
+/node_modules
+/.astro
+/dist

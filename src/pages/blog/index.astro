@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { isWorklogPost, sortedBlogPosts } from "../../lib/content";
+import PostCard from "../../components/PostCard.astro";
+
+const allPosts = await getCollection("posts");
+const posts = sortedBlogPosts(allPosts);
+---
+<BaseLayout title="所有文章 · Goudan-er" activePath="/blog/">
+  <section class="content-card blog-listing">
+    <h1 class="blog-listing__title">所有文章</h1>
+    {posts.map((post) => <PostCard post={post} />)}
+  </section>
+</BaseLayout>

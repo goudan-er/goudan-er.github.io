@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import GiscusComments from "../../components/GiscusComments.astro";
+import { isWorklogPost } from "../../lib/content";
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("posts")).filter((post) => !isWorklogPost(post));
+  return posts.map((post) => ({
+    params: { slug: post.data.slug || post.id.replace(/\.md$/, "") },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const title = `${post.data.title} · Goudan-er`;
+const description = post.data.description || post.data.teaser || "技术文章";
+const { Content } = await post.render();
+---
+<BaseLayout title={title} description={description}>
+  <section class="hero">
+    <div class="hero__inner">
+      <p class="hero__kicker">Minimal Knowledge Base</p>
+      <h1 class="hero__title">{post.data.title}</h1>
+      <p class="hero__caption">
+        {new Date(post.data.date).toISOString().slice(0, 10)}
+        {post.data.categories?.length ? ` · ${post.data.categories.join(" / ")}` : ""}
+      </p>
+    </div>
+  </section>
+
+  <article class="content-card post-page">
+    <div class="post-content">
+      <Content />
+    </div>
+  </article>
+
+  <GiscusComments />
+</BaseLayout>

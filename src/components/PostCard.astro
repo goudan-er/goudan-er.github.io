@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+  compact?: boolean;
+}
+
+const { post, compact = false } = Astro.props as Props;
+const date = new Date(post.data.date).toISOString().slice(0, 10);
+const categories = post.data.categories?.length ? post.data.categories.join(" / ") : "";
+const summary = post.data.description || post.data.teaser || "";
+---
+<article class="post-item">
+  {compact ? (
+    <a href={`/posts/${post.data.slug ?? post.id.replace(/\.md$/, "")}/`}>{post.data.title}</a>
+  ) : (
+    <h2><a href={`/posts/${post.data.slug ?? post.id.replace(/\.md$/, "")}/`}>{post.data.title}</a></h2>
+  )}
+  <p class="post-item__meta">
+    {date}
+    {categories ? ` · ${categories}` : ""}
+  </p>
+  {!compact && summary && <p>{summary}</p>}
+</article>

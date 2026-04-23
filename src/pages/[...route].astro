@@ -1,0 +1,157 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("pages", ({ data }) => !data.hidden);
+  return pages.map((page) => {
+    const route = (page.data.route || "/").replace(/^\/+|\/+$/g, "");
+    return { params: { route }, props: { page } };
+  });
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+const title = `${page.data.title} · Goudan-er`;
+const route = page.data.route || "/";
+const isSearch = route === "/search/" || route === "/search";
+const isReport = route === "/report/" || route === "/report" || route === "/worklog/" || route === "/worklog";
+const isCategoryRedirect = [
+  "/share/system/",
+  "/share/cpp/",
+  "/share/go/",
+  "/share/algorithm/",
+  "/share/misc/",
+  "/graphics-old/",
+].includes(route);
+const isCv = route === "/cv/" || route === "/cv";
+const isPalette = route === "/palette/" || route === "/palette";
+const is404 = route === "/404" || route === "/404/";
+const isMarkdown = route === "/markdown/" || route === "/markdown";
+const isInfo = route === "/info/" || route === "/info";
+const isTopics = route === "/topics/" || route === "/topics";
+const allPosts = await getCollection("posts");
+const sortedPosts = [...allPosts].sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date));
+const visiblePosts = sortedPosts.filter((post) => {
+  const categories = (post.data.categories || []).join(" ").toLowerCase();
+  const title = (post.data.title || "").toLowerCase();
+  return !(
+    categories.includes("report") ||
+    categories.includes("worklog") ||
+    categories.includes("项目日志") ||
+    title.includes("工作周报")
+  );
+});
+---
+<BaseLayout title={title} description={page.data.title} activePath={route}>
+  <section class="hero">
+    <div class="hero__inner">
+      <p class="hero__kicker">Minimal Knowledge Base</p>
+      <h1 class="hero__title">{page.data.title}</h1>
+    </div>
+  </section>
+
+  {
+    isSearch ? (
+      <section class="content-card search-panel">
+        <h2>站内搜索</h2>
+        <p>本地即时过滤，不依赖外部搜索引擎。</p>
+        <label for="local-search-input" class="search-panel__label">输入关键字并回车</label>
+        <input id="local-search-input" type="search" placeholder="输入关键字并回车" autocomplete="off" />
+        <ul id="local-search-results" class="search-results">
+          {visiblePosts.map((post) => (
+            <li
+              data-search-item
+              data-title={(post.data.title || "").toLowerCase()}
+              data-summary={(post.data.description || "").toLowerCase()}
+            >
+              <a href={`/posts/${post.data.slug ?? post.id.replace(/\.md$/, "")}/`}>{post.data.title}</a>
+              <span>{new Date(post.data.date).toISOString().slice(0, 10)}</span>
+            </li>
+          ))}
+        </ul>
+        <script is:inline>
+          {`(function(){const input=document.getElementById('local-search-input');const items=document.querySelectorAll('[data-search-item]');if(!input||!items.length)return;input.addEventListener('input',function(){const q=input.value.trim().toLowerCase();items.forEach(function(item){const t=item.getAttribute('data-title')||'';const s=item.getAttribute('data-summary')||'';item.style.display=!q||t.includes(q)||s.includes(q)?'':'none';});});})();`}
+        </script>
+      </section>
+    ) : isReport ? (
+      <section class="content-card">
+        <h1>{page.data.title}</h1>
+        <p>流水账内容已下线。保留本页面仅用于历史链接兼容。</p>
+      </section>
+    ) : isCategoryRedirect ? (
+      <section class="content-card">
+        <h1>{page.data.title}</h1>
+        <p>该分类入口已合并到主题索引页。</p>
+        <p><a href="/topics/">前往主题索引</a></p>
+      </section>
+    ) : isCv ? (
+      <section class="content-card">
+        <h1>简历</h1>
+        <ul class="wiki-links">
+          <li>
+            <a href="/downloads/cv_ywy_chn.pdf" target="_blank" rel="noopener noreferrer">中文简历</a>
+            <span>PDF</span>
+          </li>
+          <li>
+            <a href="/downloads/cv_ywy_eng.pdf" target="_blank" rel="noopener noreferrer">CV_Eng</a>
+            <span>PDF</span>
+          </li>
+        </ul>
+      </section>
+    ) : isPalette ? (
+      <section class="content-card">
+        <h1>To Be Continued</h1>
+        <audio controls preload="none" style="width:100%;">
+          <source src="/medias/palette.mp3" />
+        </audio>
+      </section>
+    ) : is404 ? (
+      <section class="content-card">
+        <h1>页面不存在</h1>
+        <p>你访问的页面不存在，请返回首页继续浏览。</p>
+        <p><a href="/">返回首页</a></p>
+      </section>
+    ) : isMarkdown ? (
+      <article class="content-card post-page">
+        <div class="post-content">
+          <Content />
+        </div>
+      </article>
+    ) : isInfo ? (
+      <section class="content-card">
+        <h1>关于</h1>
+        <p>加油！成为一个牛逼的人！</p>
+      </section>
+    ) : isTopics ? (
+      <section class="content-card">
+        <h1>主题索引</h1>
+        <h2>编程语言</h2>
+        <ul>
+          <li><a href="/share/cpp/">C++</a></li>
+          <li><a href="/share/go/">Go</a></li>
+        </ul>
+        <h2>系统与后端</h2>
+        <ul>
+          <li><a href="/share/system/">后端技术 / 系统 / 分布式</a></li>
+        </ul>
+        <h2>算法与图形学</h2>
+        <ul>
+          <li><a href="/algorithm/archive/">算法</a></li>
+          <li><a href="/graphics/archive/">图形学</a></li>
+        </ul>
+        <h2>其他</h2>
+        <ul>
+          <li><a href="/share/misc/">杂项</a></li>
+          <li><a href="/report/">项目日志</a></li>
+        </ul>
+      </section>
+    ) : (
+      <article class="content-card post-page">
+        <div class="post-content">
+          <Content />
+        </div>
+      </article>
+    )
+  }
+</BaseLayout>
