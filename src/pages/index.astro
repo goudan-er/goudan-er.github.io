@@ -4,8 +4,7 @@ import PostCard from "../components/PostCard.astro";
 import { getVisiblePosts } from "../lib/content";
 
 const posts = await getVisiblePosts();
-const featured = posts.slice(0, 1);
-const latest = posts.slice(1, 9);
+const latest = posts.slice(0, 8);
 ---
 <BaseLayout title="Goudan-er" description="技术博客">
   <section class="home-hero content-card">
@@ -16,15 +15,6 @@ const latest = posts.slice(1, 9);
       <a class="btn-link btn-link--ghost" href="/topics/">按主题浏览</a>
     </div>
   </section>
-
-  {featured[0] ? (
-    <section class="home-section">
-      <div class="home-featured content-card">
-        <p class="home-section__kicker">精选文章</p>
-        <PostCard post={featured[0]} />
-      </div>
-    </section>
-  ) : null}
 
   <section class="home-section">
     <div class="home-section__head">
