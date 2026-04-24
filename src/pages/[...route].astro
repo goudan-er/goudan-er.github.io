@@ -43,6 +43,23 @@ const visiblePosts = sortedPosts.filter((post) => {
     title.includes("工作周报")
   );
 });
+
+const topicBuckets = [
+  { key: "cpp", title: "C++", match: ["c++", "cpp"] },
+  { key: "go", title: "Go", match: ["go"] },
+  { key: "system", title: "系统与后端", match: ["system", "分布式", "后端"] },
+  { key: "algorithm", title: "算法", match: ["算法", "algorithm"] },
+  { key: "graphics", title: "图形学", match: ["图形", "graphics", "计算机图形学"] },
+  { key: "misc", title: "杂项", match: ["杂", "misc"] },
+];
+
+const postsByTopic = topicBuckets.map((bucket) => {
+  const posts = visiblePosts.filter((post) => {
+    const cats = (post.data.categories || []).map((c) => String(c).toLowerCase());
+    return bucket.match.some((token) => cats.some((c) => c.includes(token)));
+  });
+  return { ...bucket, posts: posts.slice(0, 8) };
+});
 ---
 <BaseLayout title={title} description={page.data.title} activePath={route}>
   <section class="hero">
@@ -117,26 +134,28 @@ const visiblePosts = sortedPosts.filter((post) => {
         <p>加油！成为一个牛逼的人！</p>
       </section>
     ) : isTopics ? (
-      <section class="content-card">
+      <section class="content-card topics-page">
         <h1>主题索引</h1>
-        <h2>编程语言</h2>
-        <ul>
-          <li><a href="/share/cpp/">C++</a></li>
-          <li><a href="/share/go/">Go</a></li>
-        </ul>
-        <h2>系统与后端</h2>
-        <ul>
-          <li><a href="/share/system/">后端技术 / 系统 / 分布式</a></li>
-        </ul>
-        <h2>算法与图形学</h2>
-        <ul>
-          <li><a href="/algorithm/archive/">算法</a></li>
-          <li><a href="/graphics/archive/">图形学</a></li>
-        </ul>
-        <h2>其他</h2>
-        <ul>
-          <li><a href="/share/misc/">杂项</a></li>
-        </ul>
+        {postsByTopic.map((bucket) => (
+          <section class="topics-group">
+            <div class="topics-group__head">
+              <h2>{bucket.title}</h2>
+              {bucket.posts.length ? <span>{bucket.posts.length} 篇</span> : null}
+            </div>
+            {bucket.posts.length ? (
+              <ul class="topics-posts">
+                {bucket.posts.map((post) => (
+                  <li>
+                    <a href={`/posts/${post.data.slug ?? post.id.replace(/\.md$/, "")}/`}>{post.data.title}</a>
+                    <span>{new Date(post.data.date).toISOString().slice(0, 10)}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p class="simple-empty">暂无文章</p>
+            )}
+          </section>
+        ))}
       </section>
     ) : (
       <article class="content-card post-page">
