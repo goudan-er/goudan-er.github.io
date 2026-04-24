@@ -3,7 +3,7 @@ const {
   repo = "goudan-er/goudan-er.github.io",
   repoId = "MDEwOlJlcG9zaXRvcnkxMjQyNTQ1NDg=",
   category = "General",
-  categoryId = "DIC_kwDOB2f5VM4C7Sbk",
+  categoryId = "DIC_kwDOB2f5VM4C7Sbl",
   mapping = "pathname",
   strict = "0",
   reactionsEnabled = "1",
@@ -13,25 +13,41 @@ const {
   lang = "zh-CN",
   loading = "lazy",
 } = Astro.props;
+
+const ready =
+  repo &&
+  repoId &&
+  category &&
+  categoryId &&
+  repoId.startsWith("MDEwOlJlcG9zaXRvcnk") &&
+  categoryId.startsWith("DIC_");
 ---
 <section class="comments-block" id="comments">
   <h2>评论</h2>
-  <script
-    src="https://giscus.app/client.js"
-    data-repo={repo}
-    data-repo-id={repoId}
-    data-category={category}
-    data-category-id={categoryId}
-    data-mapping={mapping}
-    data-strict={strict}
-    data-reactions-enabled={reactionsEnabled}
-    data-emit-metadata={emitMetadata}
-    data-input-position={inputPosition}
-    data-theme={theme}
-    data-lang={lang}
-    data-loading={loading}
-    crossorigin="anonymous"
-    async
-  ></script>
-  <noscript>请开启 JavaScript 后查看评论。</noscript>
+  {
+    ready ? (
+      <>
+        <script
+          src="https://giscus.app/client.js"
+          data-repo={repo}
+          data-repo-id={repoId}
+          data-category={category}
+          data-category-id={categoryId}
+          data-mapping={mapping}
+          data-strict={strict}
+          data-reactions-enabled={reactionsEnabled}
+          data-emit-metadata={emitMetadata}
+          data-input-position={inputPosition}
+          data-theme={theme}
+          data-lang={lang}
+          data-loading={loading}
+          crossorigin="anonymous"
+          async
+        ></script>
+        <noscript>请开启 JavaScript 后查看评论。</noscript>
+      </>
+    ) : (
+      <p class="comments-block__hint">评论组件配置未完成。</p>
+    )
+  }
 </section>

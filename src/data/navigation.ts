@@ -6,8 +6,7 @@ export type NavItem = {
 export const navLeft: NavItem[] = [
   { title: "首页", href: "/" },
   { title: "全部文章", href: "/blog/" },
-  { title: "主题索引", href: "/topics/" },
-  { title: "项目日志", href: "/report/" }
+  { title: "主题索引", href: "/topics/" }
 ];
 
 export const navRight: NavItem[] = [

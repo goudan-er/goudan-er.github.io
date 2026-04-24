@@ -20,7 +20,6 @@ const { Content } = await post.render();
 <BaseLayout title={title} description={description}>
   <section class="hero">
     <div class="hero__inner">
-      <p class="hero__kicker">Minimal Knowledge Base</p>
       <h1 class="hero__title">{post.data.title}</h1>
       <p class="hero__caption">
         {new Date(post.data.date).toISOString().slice(0, 10)}
