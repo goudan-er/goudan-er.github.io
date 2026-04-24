@@ -1,0 +1,96 @@
+---
+import "../styles/global.css";
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Goudan-er",
+  description = "人生在于折腾。会分享保存一些读书笔记、Code、技术、算法、图形学的东西。后面也会记录一些生活中的乐趣。一点一点的成长。",
+} = Astro.props as Props;
+
+const navItems = [
+  { label: "首页", href: "/" },
+  { label: "全部文章", href: "/blog/" },
+  { label: "主题索引", href: "/topics/" },
+  { label: "项目日志", href: "/report/" },
+  { label: "搜索", href: "/search/" },
+  { label: "关于", href: "/info/" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-container nav-shell">
+        <a class="site-brand" href="/" aria-label="home">
+          <span class="site-brand__title">Goudan-er</span>
+          <span class="site-brand__slogan">Talk is cheap</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-controls="site-nav-links" aria-expanded="false">菜单</button>
+        <nav class="site-nav" aria-label="primary">
+          <ul id="site-nav-links" class="site-nav__links">
+            {
+              navItems.map((item) => (
+                <li class={`site-nav__item${currentPath === item.href ? " is-active" : ""}`}>
+                  <a href={item.href}>{item.label}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <div class="site-container">
+        <slot />
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-container site-footer__inner">
+        <div>
+          <strong>Goudan-er</strong>
+          <p>{description}</p>
+        </div>
+        <div class="site-footer__meta">
+          <a href="/info/">关于</a>
+          <a href="/blog/">归档</a>
+          <a href="https://github.com/goudan-er/goudan-er.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+      <div class="site-container site-footer__copyright">
+        &copy; {new Date().getFullYear()} goudan-er · Built with Astro
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector(".nav-toggle");
+      const navLinks = document.getElementById("site-nav-links");
+      if (toggle && navLinks) {
+        toggle.addEventListener("click", () => {
+          const expanded = toggle.getAttribute("aria-expanded") === "true";
+          toggle.setAttribute("aria-expanded", String(!expanded));
+          navLinks.classList.toggle("is-open", !expanded);
+        });
+        navLinks.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            toggle.setAttribute("aria-expanded", "false");
+            navLinks.classList.remove("is-open");
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

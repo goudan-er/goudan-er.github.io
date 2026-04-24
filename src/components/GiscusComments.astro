@@ -1,0 +1,37 @@
+---
+const {
+  repo = "goudan-er/goudan-er.github.io",
+  repoId = "MDEwOlJlcG9zaXRvcnkxMjQyNTQ1NDg=",
+  category = "General",
+  categoryId = "DIC_kwDOB2f5VM4C7Sbk",
+  mapping = "pathname",
+  strict = "0",
+  reactionsEnabled = "1",
+  emitMetadata = "0",
+  inputPosition = "top",
+  theme = "preferred_color_scheme",
+  lang = "zh-CN",
+  loading = "lazy",
+} = Astro.props;
+---
+<section class="comments-block" id="comments">
+  <h2>评论</h2>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo={repo}
+    data-repo-id={repoId}
+    data-category={category}
+    data-category-id={categoryId}
+    data-mapping={mapping}
+    data-strict={strict}
+    data-reactions-enabled={reactionsEnabled}
+    data-emit-metadata={emitMetadata}
+    data-input-position={inputPosition}
+    data-theme={theme}
+    data-lang={lang}
+    data-loading={loading}
+    crossorigin="anonymous"
+    async
+  ></script>
+  <noscript>请开启 JavaScript 后查看评论。</noscript>
+</section>
