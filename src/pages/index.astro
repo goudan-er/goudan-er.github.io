@@ -4,30 +4,64 @@ import PostCard from "../components/PostCard.astro";
 import { getVisiblePosts } from "../lib/content";
 
 const posts = await getVisiblePosts();
-const latest = posts.slice(0, 12);
+const featured = posts.slice(0, 1);
+const latest = posts.slice(1, 9);
 ---
-<BaseLayout title="Goudan-er" description="以条目化组织知识：优先可检索、可归档、可追溯。">
-  <section class="home-intro">
-    <p class="home-intro__title">Wiki Index</p>
-    <p class="home-intro__desc">以条目化组织知识：优先可检索、可归档、可追溯。</p>
+<BaseLayout title="Goudan-er" description="技术博客">
+  <section class="home-hero content-card">
+    <p class="home-hero__kicker">Technical Blog</p>
+    <h1 class="home-hero__title">写代码，记问题，也记录一些长期思考。</h1>
+    <p class="home-hero__desc">这里主要分享编程、系统、算法和图形学相关内容。</p>
+    <div class="home-hero__actions">
+      <a class="btn-link" href="/blog/">浏览全部文章</a>
+      <a class="btn-link btn-link--ghost" href="/topics/">按主题浏览</a>
+    </div>
+  </section>
+
+  {featured[0] ? (
+    <section class="home-section">
+      <div class="home-featured content-card">
+        <p class="home-section__kicker">精选文章</p>
+        <PostCard post={featured[0]} />
+      </div>
+    </section>
+  ) : null}
+
+  <section class="home-section">
+    <div class="home-section__head">
+      <h2>最新文章</h2>
+      <a href="/blog/">更多</a>
+    </div>
+    <div class="content-card">
+      {latest.map((post) => <PostCard post={post} compact={true} />)}
+    </div>
   </section>
 
   <section class="home-section">
+    <div class="home-section__head">
+      <h2>快速入口</h2>
+    </div>
     <div class="wiki-grid">
       <div class="wiki-card">
-        <h2 class="wiki-card__title">核心入口</h2>
+        <h2 class="wiki-card__title">阅读</h2>
         <ul class="wiki-links">
-          <li><a href="/topics/">主题索引</a><span>按技术主题浏览</span></li>
-          <li><a href="/blog/">所有文章</a><span>按时间归档浏览</span></li>
-          <li><a href="/search/">站内搜索</a><span>关键字即时过滤</span></li>
+          <li><a href="/blog/">全部文章</a><span>归档</span></li>
+          <li><a href="/topics/">主题索引</a><span>分类</span></li>
+          <li><a href="/search/">站内搜索</a><span>检索</span></li>
         </ul>
       </div>
       <div class="wiki-card">
-        <h2 class="wiki-card__title">最近条目</h2>
+        <h2 class="wiki-card__title">关于站点</h2>
         <ul class="wiki-post-list">
-          {latest.map((post) => <PostCard post={post} compact={true} />)}
+          <li><a href="/info/">关于</a><span>一句话</span></li>
+          <li><a href="/cv/">简历</a><span>PDF</span></li>
+          <li>
+            <a href="https://github.com/goudan-er/goudan-er.github.io" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+            <span>仓库</span>
+          </li>
         </ul>
-        <p class="wiki-card__action"><a href="/blog/">查看完整归档</a></p>
       </div>
     </div>
   </section>
