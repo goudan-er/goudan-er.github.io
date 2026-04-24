@@ -140,6 +140,112 @@ a:hover {
   padding: 1.25rem 0 2.5rem;
 }
 
+.home-hero {
+  padding: 1.1rem 0 0.2rem;
+}
+
+.home-hero__card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(130deg, #ffffff 0%, #f3f7ff 100%);
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.home-hero__kicker {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #475569;
+}
+
+.home-hero__title {
+  margin: 0.45rem 0 0;
+  font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+  line-height: 1.25;
+}
+
+.home-hero__desc {
+  margin: 0.65rem 0 0;
+  color: #4b5563;
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.home-hero__actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  color: #374151;
+  font-size: 0.88rem;
+  background: #fff;
+}
+
+.home-hero__actions a:hover {
+  background: #eff6ff;
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.home-stream {
+  margin-top: 1rem;
+}
+
+.home-stream__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.home-stream__head h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.home-stream__more {
+  font-size: 0.88rem;
+  color: #475569;
+}
+
+.home-side {
+  margin-top: 1rem;
+}
+
+.home-side__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.home-side__card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  padding: 0.9rem 0.95rem;
+}
+
+.home-side__card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.home-side__card p {
+  margin: 0.4rem 0 0;
+  color: #6b7280;
+  font-size: 0.84rem;
+}
+
 .content-card {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -291,6 +397,11 @@ a:hover {
   color: var(--muted);
 }
 
+.simple-empty {
+  color: #6b7280;
+  margin: 0;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   background: #fff;
@@ -348,6 +459,14 @@ a:hover {
 }
 
 @media (max-width: 760px) {
+  .home-hero__card {
+    padding: 1.1rem 1rem;
+  }
+
+  .home-side__grid {
+    grid-template-columns: 1fr;
+  }
+
   .wiki-grid {
     grid-template-columns: 1fr;
   }

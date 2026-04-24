@@ -30,6 +30,7 @@ const is404 = route === "/404" || route === "/404/";
 const isMarkdown = route === "/markdown/" || route === "/markdown";
 const isInfo = route === "/info/" || route === "/info";
 const isTopics = route === "/topics/" || route === "/topics";
+const isSimpleRedirect = isReport || isCategoryRedirect;
 const allPosts = await getCollection("posts");
 const sortedPosts = [...allPosts].sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date));
 const visiblePosts = sortedPosts.filter((post) => {
@@ -74,16 +75,10 @@ const visiblePosts = sortedPosts.filter((post) => {
           {`(function(){const input=document.getElementById('local-search-input');const items=document.querySelectorAll('[data-search-item]');if(!input||!items.length)return;input.addEventListener('input',function(){const q=input.value.trim().toLowerCase();items.forEach(function(item){const t=item.getAttribute('data-title')||'';const s=item.getAttribute('data-summary')||'';item.style.display=!q||t.includes(q)||s.includes(q)?'':'none';});});})();`}
         </script>
       </section>
-    ) : isReport ? (
+    ) : isSimpleRedirect ? (
       <section class="content-card">
         <h1>{page.data.title}</h1>
-        <p>流水账内容已下线。保留本页面仅用于历史链接兼容。</p>
-      </section>
-    ) : isCategoryRedirect ? (
-      <section class="content-card">
-        <h1>{page.data.title}</h1>
-        <p>该分类入口已合并到主题索引页。</p>
-        <p><a href="/topics/">前往主题索引</a></p>
+        <p><a href="/blog/">查看文章归档</a></p>
       </section>
     ) : isCv ? (
       <section class="content-card">
