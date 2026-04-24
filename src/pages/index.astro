@@ -8,39 +8,34 @@ const latest = posts.slice(0, 8);
 ---
 <BaseLayout title="Goudan-er" description="技术博客">
   <section class="home-hero content-card">
-    <h1 class="home-hero__title">写代码，记问题，也记录一些长期思考。</h1>
+    <h1 class="home-hero__title">写代码，记问题，记录长期思考。</h1>
     <p class="home-hero__desc">这里主要分享编程、系统、算法和图形学相关内容。</p>
-    <div class="home-hero__actions">
-      <a class="btn-link" href="/blog/">浏览全部文章</a>
-      <a class="btn-link btn-link--ghost" href="/topics/">按主题浏览</a>
-    </div>
   </section>
 
-  <section class="home-section">
-    <div class="home-section__head">
-      <h2>最新文章</h2>
-      <a href="/blog/">更多</a>
+  <section class="home-layout">
+    <div class="home-main">
+      <section class="home-section">
+        <div class="home-section__head">
+          <h2>最新文章</h2>
+          <a href="/blog/">更多</a>
+        </div>
+        <div class="content-card">
+          {latest.map((post) => <PostCard post={post} compact={true} />)}
+        </div>
+      </section>
     </div>
-    <div class="content-card">
-      {latest.map((post) => <PostCard post={post} compact={true} />)}
-    </div>
-  </section>
 
-  <section class="home-section">
-    <div class="home-section__head">
-      <h2>快速入口</h2>
-    </div>
-    <div class="wiki-grid">
-      <div class="wiki-card">
-        <h2 class="wiki-card__title">阅读</h2>
+    <aside class="home-aside">
+      <section class="content-card aside-card">
+        <h2 class="aside-card__title">导航</h2>
         <ul class="wiki-links">
           <li><a href="/blog/">全部文章</a><span>归档</span></li>
           <li><a href="/topics/">主题索引</a><span>分类</span></li>
           <li><a href="/search/">站内搜索</a><span>检索</span></li>
         </ul>
-      </div>
-      <div class="wiki-card">
-        <h2 class="wiki-card__title">关于站点</h2>
+      </section>
+      <section class="content-card aside-card">
+        <h2 class="aside-card__title">链接</h2>
         <ul class="wiki-post-list">
           <li><a href="/info/">关于</a><span>一句话</span></li>
           <li><a href="/cv/">简历</a><span>PDF</span></li>
@@ -51,7 +46,7 @@ const latest = posts.slice(0, 8);
             <span>仓库</span>
           </li>
         </ul>
-      </div>
-    </div>
+      </section>
+    </aside>
   </section>
 </BaseLayout>
