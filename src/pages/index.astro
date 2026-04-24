@@ -19,7 +19,7 @@ const latest = posts.slice(0, 8);
           <h2>最新文章</h2>
           <a href="/blog/">更多</a>
         </div>
-        <div class="content-card">
+        <div class="content-card home-latest-card">
           {latest.map((post) => <PostCard post={post} compact={true} />)}
         </div>
       </section>
