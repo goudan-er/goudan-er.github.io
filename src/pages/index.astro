@@ -5,30 +5,6 @@ import { getVisiblePosts } from "../lib/content";
 
 const posts = await getVisiblePosts();
 const latest = posts.slice(0, 8);
-const topicCards = [
-  {
-    title: "C++",
-    href: "/share/cpp/",
-    posts: posts.filter((post) => post.data.categories?.includes("C++")).slice(0, 3),
-  },
-  {
-    title: "Go",
-    href: "/share/go/",
-    posts: posts.filter((post) => post.data.categories?.includes("Go")).slice(0, 3),
-  },
-  {
-    title: "系统 / 分布式",
-    href: "/share/system/",
-    posts: posts
-      .filter((post) => post.data.categories?.some((c) => c.includes("系统") || c.includes("分布式")))
-      .slice(0, 3),
-  },
-  {
-    title: "算法",
-    href: "/share/algorithm/",
-    posts: posts.filter((post) => post.data.categories?.includes("算法")).slice(0, 3),
-  },
-];
 ---
 <BaseLayout title="Goudan-er" description="技术博客">
   <section class="home-hero content-card">
@@ -37,63 +13,14 @@ const topicCards = [
   </section>
 
   <section class="home-layout">
-    <div class="home-main">
-      <section class="home-section">
-        <div class="home-section__head">
-          <h2>最新文章</h2>
-          <a href="/blog/">更多</a>
-        </div>
-        <div class="content-card home-latest-card">
-          {latest.map((post) => <PostCard post={post} compact={true} />)}
-        </div>
-      </section>
-
-      <section class="home-section">
-        <div class="home-section__head">
-          <h2>主题索引</h2>
-          <a href="/topics/">全部</a>
-        </div>
-        <div class="topic-grid">
-          {topicCards.map((topic) => (
-            <article class="content-card topic-card">
-              <h3 class="topic-card__title">
-                <a href={topic.href}>{topic.title}</a>
-              </h3>
-              <ul class="topic-card__posts">
-                {topic.posts.map((post) => (
-                  <li>
-                    <a href={`/posts/${post.data.slug ?? post.id.replace(/\.md$/, "")}/`}>{post.data.title}</a>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-    </div>
-
-    <aside class="home-aside">
-      <section class="content-card aside-card">
-        <h2 class="aside-card__title">导航</h2>
-        <ul class="wiki-links">
-          <li><a href="/blog/">全部文章</a><span>归档</span></li>
-          <li><a href="/topics/">主题索引</a><span>分类</span></li>
-          <li><a href="/search/">站内搜索</a><span>检索</span></li>
-        </ul>
-      </section>
-      <section class="content-card aside-card">
-        <h2 class="aside-card__title">链接</h2>
-        <ul class="wiki-post-list">
-          <li><a href="/info/">关于</a><span>一句话</span></li>
-          <li><a href="/cv/">简历</a><span>PDF</span></li>
-          <li>
-            <a href="https://github.com/goudan-er/goudan-er.github.io" target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-            <span>仓库</span>
-          </li>
-        </ul>
-      </section>
-    </aside>
+    <section class="home-section home-main">
+      <div class="home-section__head">
+        <h2>最新文章</h2>
+        <a href="/blog/">更多</a>
+      </div>
+      <div class="content-card home-latest-card">
+        {latest.map((post) => <PostCard post={post} compact={true} />)}
+      </div>
+    </section>
   </section>
 </BaseLayout>

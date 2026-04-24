@@ -190,18 +190,8 @@ a:hover {
   min-width: 0;
 }
 
-.home-aside {
-  display: grid;
-  gap: 0.82rem;
-  align-content: start;
-}
-
 .home-section {
   margin: 0;
-}
-
-.home-latest-card {
-  height: 100%;
 }
 
 .home-section__head {
@@ -223,20 +213,6 @@ a:hover {
 .home-section__head a {
   font-size: 0.82rem;
   color: #64748b;
-}
-
-.aside-card {
-  padding: 0.9rem;
-  border-color: #dfe6f1;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.02);
-  height: 100%;
-}
-
-.aside-card__title {
-  margin: 0 0 0.55rem;
-  font-size: 0.89rem;
-  color: #334155;
-  font-weight: 640;
 }
 
 .content-card {
