@@ -204,6 +204,27 @@ a:hover {
   height: 100%;
 }
 
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin: 0 0 0.58rem;
+}
+
+.panel-head h2 {
+  margin: 0;
+  font-size: 0.99rem;
+  font-weight: 650;
+  color: #334155;
+  letter-spacing: 0.01em;
+}
+
+.panel-head a {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
 .home-section__head {
   display: flex;
   align-items: center;
