@@ -39,11 +39,11 @@ const topicCards = [
   <section class="home-layout">
     <div class="home-main">
       <section class="home-section">
-        <div class="home-section__head">
-          <h2>最新文章</h2>
-          <a href="/blog/">更多</a>
-        </div>
         <div class="content-card home-latest-card">
+          <div class="panel-head">
+            <h2>最新文章</h2>
+            <a href="/blog/">更多</a>
+          </div>
           {latest.map((post) => <PostCard post={post} compact={true} />)}
         </div>
       </section>
