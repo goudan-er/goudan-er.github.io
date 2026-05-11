@@ -88,7 +88,20 @@ const postsByTopic = topicBuckets.map((bucket) => {
           ))}
         </ul>
         <script is:inline>
-          {`(function(){const input=document.getElementById('local-search-input');const items=document.querySelectorAll('[data-search-item]');if(!input||!items.length)return;input.addEventListener('input',function(){const q=input.value.trim().toLowerCase();items.forEach(function(item){const t=item.getAttribute('data-title')||'';const s=item.getAttribute('data-summary')||'';item.style.display=!q||t.includes(q)||s.includes(q)?'':'none';});});})();`}
+          (() => {
+            const input = document.getElementById("local-search-input");
+            const items = document.querySelectorAll("[data-search-item]");
+            if (!input || !items.length) return;
+
+            input.addEventListener("input", () => {
+              const query = input.value.trim().toLowerCase();
+              items.forEach((item) => {
+                const title = item.getAttribute("data-title") || "";
+                const summary = item.getAttribute("data-summary") || "";
+                item.style.display = !query || title.includes(query) || summary.includes(query) ? "" : "none";
+              });
+            });
+          })();
         </script>
       </section>
     ) : isSimpleRedirect ? (
