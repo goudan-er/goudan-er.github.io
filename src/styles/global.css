@@ -427,16 +427,6 @@ a:hover {
   background: #fff;
 }
 
-.search-panel input {
-  width: 100%;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  padding: 0.55rem 0.7rem;
-  margin-bottom: 0.85rem;
-  background: #fff;
-}
-
 .comments-block {
   margin-top: 1.4rem;
   padding-top: 0.9rem;
