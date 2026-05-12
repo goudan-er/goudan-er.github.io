@@ -30,6 +30,7 @@ const is404 = route === "/404" || route === "/404/";
 const isMarkdown = route === "/markdown/" || route === "/markdown";
 const isInfo = route === "/info/" || route === "/info";
 const isTopics = route === "/topics/" || route === "/topics";
+const useBlogListingStyle = isSearch || isInfo || isTopics;
 const isSimpleRedirect = isReport || isCategoryRedirect;
 const allPosts = await getCollection("posts");
 const sortedPosts = [...allPosts].sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date));
@@ -62,20 +63,24 @@ const postsByTopic = topicBuckets.map((bucket) => {
 });
 ---
 <BaseLayout title={title} description={page.data.title} activePath={route}>
-  <section class="hero">
-    <div class="hero__inner">
-      <h1 class="hero__title">{page.data.title}</h1>
-    </div>
-  </section>
+  {
+    !useBlogListingStyle ? (
+      <section class="hero">
+        <div class="hero__inner">
+          <h1 class="hero__title">{page.data.title}</h1>
+        </div>
+      </section>
+    ) : null
+  }
 
   {
     isSearch ? (
-      <section class="content-card search-panel">
-        <h2>站内搜索</h2>
+      <section class="content-card blog-listing">
+        <h1 class="blog-listing__title">站内搜索</h1>
         <p>本地即时过滤，不依赖外部搜索引擎。</p>
-        <label for="local-search-input" class="search-panel__label">输入关键字并回车</label>
+        <label for="local-search-input">输入关键字并回车</label>
         <input id="local-search-input" type="search" placeholder="输入关键字并回车" autocomplete="off" />
-        <ul id="local-search-results" class="search-results">
+        <ul id="local-search-results" class="post-list">
           {visiblePosts.map((post) => (
             <li
               data-search-item
@@ -142,21 +147,18 @@ const postsByTopic = topicBuckets.map((bucket) => {
         </div>
       </article>
     ) : isInfo ? (
-      <section class="content-card">
-        <h1>关于</h1>
+      <section class="content-card blog-listing">
+        <h1 class="blog-listing__title">关于</h1>
         <p>加油！成为一个牛逼的人！</p>
       </section>
     ) : isTopics ? (
-      <section class="content-card topics-page">
-        <h1>主题索引</h1>
+      <section class="content-card blog-listing">
+        <h1 class="blog-listing__title">主题索引</h1>
         {postsByTopic.map((bucket) => (
-          <section class="topics-group">
-            <div class="topics-group__head">
-              <h2>{bucket.title}</h2>
-              {bucket.posts.length ? <span>{bucket.posts.length} 篇</span> : null}
-            </div>
+          <section class="topic-section">
+            <h2>{bucket.title}</h2>
             {bucket.posts.length ? (
-              <ul class="topics-posts">
+              <ul class="post-list">
                 {bucket.posts.map((post) => (
                   <li>
                     <a href={`/posts/${post.data.slug ?? post.id.replace(/\.md$/, "")}/`}>{post.data.title}</a>
